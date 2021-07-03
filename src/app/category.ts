@@ -1,7 +1,7 @@
-import { Clue } from './clue'
+import { Clue } from './clue';
 export interface Category {
-    id: Number,
-    title: String,
-    clues_count: Number,
-    clues: Clue[]
+  id: number;
+  title: string;
+  clues_count: number;
+  clues: Clue[];
 }

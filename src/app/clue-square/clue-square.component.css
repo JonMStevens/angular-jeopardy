@@ -1,4 +1,6 @@
-* { outline: solid 1px black; }
+* {
+  outline: solid 1px black;
+}
 .clicked {
-    color: white;
+  color: white;
 }

@@ -1,10 +1,10 @@
 <div *ngIf="clue">
-    <div *ngIf="!answerSeen">
-        <p>{{clue.question}}</p>
-        <button (click)="showAnswer()">show answer</button>
-    </div>
-    <div *ngIf="answerSeen">
-        <p>{{clue.answer}}</p>
-        <button (click)="showBoard()">return to board</button>
-    </div>
+  <div *ngIf="!answerSeen">
+    <p>{{ clue.question }}</p>
+    <button (click)="showAnswer()">show answer</button>
+  </div>
+  <div *ngIf="answerSeen">
+    <p>{{ clue.answer }}</p>
+    <button (click)="showBoard()">return to board</button>
+  </div>
 </div>

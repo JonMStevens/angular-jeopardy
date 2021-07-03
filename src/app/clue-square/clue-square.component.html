@@ -1,1 +1,3 @@
-<p *ngIf="clueNumber" [ngClass]="{'clicked' : clicked}" (click)="onClueClick()">${{clueNumber * 100}}</p>
+<p *ngIf="clueNumber" [ngClass]="{ clicked: clicked }" (click)="onClueClick()">
+  ${{ clueNumber * 100 }}
+</p>

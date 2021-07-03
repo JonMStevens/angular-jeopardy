@@ -1,18 +1,17 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Clue } from '../clue';
-
 
 @Component({
   selector: 'app-question-screen',
   templateUrl: './question-screen.component.html',
-  styleUrls: ['./question-screen.component.css']
+  styleUrls: ['./question-screen.component.css'],
 })
 export class QuestionScreenComponent implements OnInit {
-  @Input () public clue:Clue | undefined = undefined;
+  @Input() public clue: Clue | undefined = undefined;
   @Output() public questionComplete = new EventEmitter();
   answerSeen = false;
-  
-  constructor() { }
+
+  constructor() {}
 
   ngOnInit(): void {
     if (!this.clue) {
@@ -21,11 +20,11 @@ export class QuestionScreenComponent implements OnInit {
       this.questionComplete.emit();
     }
   }
-  
+
   showAnswer(): void {
     this.answerSeen = true;
   }
-  showBoard() {
+  showBoard(): void {
     this.answerSeen = false;
     this.questionComplete.emit();
   }

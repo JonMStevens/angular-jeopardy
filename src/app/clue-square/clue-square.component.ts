@@ -1,18 +1,16 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-clue-square',
   templateUrl: './clue-square.component.html',
-  styleUrls: ['./clue-square.component.css']
+  styleUrls: ['./clue-square.component.css'],
 })
 export class ClueSquareComponent implements OnInit {
   @Input() public clueNumber: number | undefined = undefined;
-  @Input() public clicked: boolean = false;
+  clicked = false;
 
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onClueClick(): void {
     this.clicked = true;
