@@ -2,8 +2,8 @@ export interface Clue {
     id: number,
     answer: string,
     question: string,
-    value: number,
-    airdate: Date,
-    category_id: number,
-    game_id: number
+    question_number: number,
+    value: number | null,
+    airdate: Date | null,
+    game_id: number | null
 }

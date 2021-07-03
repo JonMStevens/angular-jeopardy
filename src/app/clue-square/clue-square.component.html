@@ -1,1 +1,1 @@
-<p [ngClass]="{'clicked' : clicked}" (click)="clueClick()">clue-square works!</p>
+<p *ngIf="clueNumber" [ngClass]="{'clicked' : clicked}" (click)="onClueClick()">${{clueNumber * 100}}</p>

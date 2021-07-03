@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { BoardComponent } from './board/board.component';
 import { CategoryComponent } from './category/category.component';
 import { ClueSquareComponent as ClueSquareComponent } from './clue-square/clue-square.component';
+import { QuestionScreenComponent } from './question-screen/question-screen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BoardComponent,
     CategoryComponent,
-    ClueSquareComponent
+    ClueSquareComponent,
+    QuestionScreenComponent
   ],
   imports: [
     BrowserModule,

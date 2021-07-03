@@ -1,6 +1,4 @@
-<h2 *ngIf="category">{{category.title}}</h2>
-<app-clue-square></app-clue-square>
-<app-clue-square></app-clue-square>
-<app-clue-square></app-clue-square>
-<app-clue-square></app-clue-square>
-<app-clue-square></app-clue-square>
+<div *ngIf="category">
+    <h2>{{category.title}}</h2>
+    <app-clue-square *ngFor="let clue of category.clues" [clueNumber]="clue.question_number" (click)="onClueClick(clue)"></app-clue-square>
+</div>
