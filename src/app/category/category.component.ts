@@ -15,7 +15,7 @@ export class CategoryComponent implements OnInit {
   constructor(private categoryGetterService: CategoryGetterService) { }
 
   ngOnInit(): void {
-    this.category = this.categoryGetterService.getCategory();
+    this.categoryGetterService.getCategory().subscribe(category => this.category = category);
   }
 
   onClueClick(clue: Clue): void {

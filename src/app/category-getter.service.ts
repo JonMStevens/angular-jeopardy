@@ -10,7 +10,7 @@ export class CategoryGetterService {
 
   constructor() { }
 
-  getCategory(): Category {
+  getCategory(): Observable<Category> {
     let category: Category = JSON.parse(this.fakeCategoryJS);
     let clues: Clue[] = [];
     for (let index = 0; index < category.clues.length; index++) {
@@ -26,6 +26,6 @@ export class CategoryGetterService {
       });
     }
     category.clues = clues;
-    return category;
+    return of(category);
   }
 }
