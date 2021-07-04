@@ -3,6 +3,6 @@
   <app-clue-square
     *ngFor="let clue of category.clues"
     [clueNumber]="clue.question_number"
-    (click)="onClueClick(clue)"
+    (clueClick)="onClueClick(clue)"
   ></app-clue-square>
 </div>
