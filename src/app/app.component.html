@@ -1,9 +1,6 @@
-<div [ngStyle]="{ display: showBoard ? 'grid' : 'none' }">
-  <app-board (clueClick)="onClueClick($event)"></app-board>
+<div [ngStyle]="{ display: showBoard() ? 'grid' : 'none' }">
+  <app-board></app-board>
 </div>
-<div [ngStyle]="{ display: !showBoard ? 'inline-block' : 'none' }">
-  <app-question-screen
-    [clue]="clickedClue"
-    (questionComplete)="onQuestionComplete()"
-  ></app-question-screen>
+<div [ngStyle]="{ display: !showBoard() ? 'inline-block' : 'none' }">
+  <app-question-screen></app-question-screen>
 </div>

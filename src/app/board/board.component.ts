@@ -1,5 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Clue } from '../clue';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-board',
@@ -7,13 +6,6 @@ import { Clue } from '../clue';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
-  @Output() public clueClick = new EventEmitter<Clue>();
-
   constructor() {}
-
   ngOnInit(): void {}
-
-  onClueClick(clue: Clue): void {
-    this.clueClick.emit(clue);
-  }
 }

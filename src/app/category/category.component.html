@@ -2,7 +2,6 @@
   <h2>{{ category.title }}</h2>
   <app-clue-square
     *ngFor="let clue of category.clues"
-    [clueNumber]="clue.question_number"
-    (clueClick)="onClueClick(clue)"
+    [clue]="clue"
   ></app-clue-square>
 </div>

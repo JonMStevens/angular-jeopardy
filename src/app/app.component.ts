@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Clue } from './clue';
+import { GameStateService } from './game-state.service';
 
 @Component({
   selector: 'app-root',
@@ -8,17 +8,6 @@ import { Clue } from './clue';
 })
 export class AppComponent {
   title = 'ang-jeopardy';
-  showBoard = true;
-  clickedClue: Clue | null = null;
-  onClueClick(clue: Clue): void {
-    if (!clue) {
-      return;
-    }
-
-    this.showBoard = false;
-    this.clickedClue = clue;
-  }
-  onQuestionComplete(): void {
-    this.showBoard = true;
-  }
+  constructor(private gameState: GameStateService) {}
+  showBoard = (): boolean => this.gameState.currentClue == null; 
 }
