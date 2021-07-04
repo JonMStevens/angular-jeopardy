@@ -1,11 +1,8 @@
-div {
-  outline: 1px solid black;
-  height: calc(100% - 40px);
-  width: calc(100% - 40px);
-  padding: 20px 20px 20px 20px;
-}
 .board {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 0px;
+  outline: 1px solid black;
+  height: 100%;
+  width: 100%;
 }

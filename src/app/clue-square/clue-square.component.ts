@@ -5,7 +5,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./clue-square.component.css']
 })
 export class ClueSquareComponent implements OnInit {
-  @Input() public clueNumber: number | undefined = undefined;
+  @Input() public clueNumber: number | null = null;
   @Output() public clueClick = new EventEmitter();
   clicked = false;
 

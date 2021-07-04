@@ -9,8 +9,8 @@ import { Clue } from '../clue';
   styleUrls: ['./category.component.css'],
 })
 export class CategoryComponent implements OnInit {
-  category: Category | undefined = undefined;
-  @Output() public clueClicked = new EventEmitter<Clue>();
+  category: Category | null = null;
+  @Output() public clueClick = new EventEmitter<Clue>();
   constructor(private categoryGetterService: CategoryGetterService) {}
 
   ngOnInit(): void {
@@ -20,6 +20,6 @@ export class CategoryComponent implements OnInit {
   }
 
   onClueClick(clue: Clue): void {
-    this.clueClicked.emit(clue);
+    this.clueClick.emit(clue);
   }
 }

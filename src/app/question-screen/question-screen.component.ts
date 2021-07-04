@@ -7,7 +7,7 @@ import { Clue } from '../clue';
   styleUrls: ['./question-screen.component.css'],
 })
 export class QuestionScreenComponent implements OnInit {
-  @Input() public clue: Clue | undefined = undefined;
+  @Input() public clue: Clue | null = null;
   @Output() public questionComplete = new EventEmitter();
   answerSeen = false;
 

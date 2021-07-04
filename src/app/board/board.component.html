@@ -1,17 +1,7 @@
-<!-- hide instead of ngIf because we want to maintain board state between showing and hiding -->
-<div [ngStyle]="{ display: showBoard ? 'grid' : 'none' }" class="board">
-  <app-category (clueClicked)="onClueClicked($event)"></app-category>
-  <app-category (clueClicked)="onClueClicked($event)"></app-category>
-  <app-category (clueClicked)="onClueClicked($event)"></app-category>
-  <app-category (clueClicked)="onClueClicked($event)"></app-category>
-  <app-category (clueClicked)="onClueClicked($event)"></app-category>
-</div>
-<div
-  [ngStyle]="{ display: !showBoard ? 'inline-block' : 'none' }"
-  class="questionScreen"
->
-  <app-question-screen
-    [clue]="clickedClue"
-    (questionComplete)="onQuestionComplete()"
-  ></app-question-screen>
+<div class="board">
+  <app-category (clueClick)="onClueClick($event)"></app-category>
+  <app-category (clueClick)="onClueClick($event)"></app-category>
+  <app-category (clueClick)="onClueClick($event)"></app-category>
+  <app-category (clueClick)="onClueClick($event)"></app-category>
+  <app-category (clueClick)="onClueClick($event)"></app-category>
 </div>
