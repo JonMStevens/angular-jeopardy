@@ -7,7 +7,7 @@ import { Clue } from '../clue';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
-  showBoard = false;
+  showBoard = true;
   clickedClue: Clue | undefined;
   constructor() {}
 

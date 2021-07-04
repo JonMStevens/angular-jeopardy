@@ -1,4 +1,6 @@
-* {
+p {
+  height: 100%;
+  text-align: center;
   outline: solid 1px black;
 }
 .clicked {

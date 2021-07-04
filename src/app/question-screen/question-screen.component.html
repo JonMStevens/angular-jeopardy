@@ -1,4 +1,4 @@
-<div *ngIf="clue">
+<div id="wrapperDiv" *ngIf="clue">
   <div *ngIf="!answerSeen">
     <p>{{ clue.question }}</p>
     <button (click)="showAnswer()">show answer</button>

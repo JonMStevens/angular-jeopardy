@@ -6,8 +6,12 @@
   <app-category (clueClicked)="onClueClicked($event)"></app-category>
   <app-category (clueClicked)="onClueClicked($event)"></app-category>
 </div>
-<app-question-screen
-  [ngStyle]="{ display: !showBoard ? 'block' : 'none' }"
-  [clue]="clickedClue"
-  (questionComplete)="onQuestionComplete()"
-></app-question-screen>
+<div
+  [ngStyle]="{ display: !showBoard ? 'inline-block' : 'none' }"
+  class="questionScreen"
+>
+  <app-question-screen
+    [clue]="clickedClue"
+    (questionComplete)="onQuestionComplete()"
+  ></app-question-screen>
+</div>
