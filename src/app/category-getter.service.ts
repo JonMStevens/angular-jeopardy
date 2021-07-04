@@ -11,7 +11,7 @@ export class CategoryGetterService {
 
   constructor() {}
 
-  getCategory(): Observable<Category> {
+  getCategory$(): Observable<Category> {
     const category: Category = JSON.parse(this.fakeCategoryJS);
     const clues: Clue[] = [];
     for (let index = 0; index < category.clues.length; index++) {

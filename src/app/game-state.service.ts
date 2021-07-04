@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Clue } from './clue';
 
 @Injectable({
@@ -21,6 +22,11 @@ export class GameStateService {
   public set currentClue(value: Clue | null) {
     this._currentClue = value;
   }
-  constructor() {}
 
+  private _roundChange$ = new Subject<number>();
+  public get roundChange$(): Subject<number> {
+    return this._roundChange$;
+  }
+
+  constructor() {}
 }
