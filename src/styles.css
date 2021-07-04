@@ -12,3 +12,12 @@ body {
   height: 100vh;
   width: 100vw;
 }
+
+.screen-reader-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
