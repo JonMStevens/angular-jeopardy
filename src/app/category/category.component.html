@@ -1,5 +1,5 @@
 <div *ngIf="category">
-  <h2>{{ category.title }}</h2>
+  <h2 [innerHTML]="category.title"></h2>
   <app-clue-square
     *ngFor="let clue of category.clues"
     [clue]="clue"

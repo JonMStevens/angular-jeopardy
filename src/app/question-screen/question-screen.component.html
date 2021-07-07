@@ -1,9 +1,14 @@
 <div *ngIf="gameState.currentClue && !answerSeen">
-  <p>{{ gameState.currentClue.question }}</p>
+  <p [innerHTML]="gameState.currentClue.question"></p>
   <button (click)="showAnswer()">show answer</button>
 </div>
 <div *ngIf="gameState.currentClue && answerSeen">
-  <p>{{ gameState.currentClue.answer }}</p>
-  <button *ngFor="let player of playerService.players" (click)="awardPoints(player)">{{player.name}}</button>
-  <button (click)="showBoard()">Stumped!</button> 
+  <p [innerHTML]="gameState.currentClue.answer"></p>
+  <button
+    *ngFor="let player of playerService.players"
+    (click)="awardPoints(player)"
+  >
+    {{ player.name }}
+  </button>
+  <button (click)="showBoard()">Stumped!</button>
 </div>

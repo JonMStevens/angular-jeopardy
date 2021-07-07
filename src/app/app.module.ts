@@ -9,6 +9,7 @@ import { ClueSquareComponent as ClueSquareComponent } from './clue-square/clue-s
 import { QuestionScreenComponent } from './question-screen/question-screen.component';
 import { PlayerComponent } from './player/player.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { FormsModule } from '@angular/forms';
     QuestionScreenComponent,
     PlayerComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })
