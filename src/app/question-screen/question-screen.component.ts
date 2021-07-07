@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Clue } from '../clue';
 import { GameStateService } from '../game-state.service';
+import { Player } from '../player';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-question-screen',
@@ -10,7 +11,10 @@ import { GameStateService } from '../game-state.service';
 export class QuestionScreenComponent implements OnInit {
   answerSeen = false;
 
-  constructor(private gameState: GameStateService) {}
+  constructor(
+    public gameState: GameStateService,
+    public playerService: PlayerService
+  ) {}
 
   ngOnInit(): void {
     if (!this.gameState.currentClue) {
@@ -22,12 +26,14 @@ export class QuestionScreenComponent implements OnInit {
   showAnswer(): void {
     this.answerSeen = true;
   }
+
   showBoard(): void {
     this.answerSeen = false;
     this.gameState.currentClue = null;
   }
 
-  public get clue(): Clue | null {
-    return this.gameState.currentClue;
+  awardPoints(player: Player): void {
+    player.score += this.gameState.getClueValue(this.gameState.currentClue);
+    this.showBoard();
   }
 }

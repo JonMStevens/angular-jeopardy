@@ -12,3 +12,9 @@ div > div {
   display:grid;
   grid-template-rows: 90% 10%;
 }
+
+#footer {
+  display: grid;
+  grid-template-rows:100%;;
+  grid-template-columns: repeat(5, 1fr);
+}

@@ -21,7 +21,7 @@ export class CategoryGetterService {
         answer: clue.answer,
         question: clue.question,
         question_number: (index % 5) + 1,
-        value: clue.value,
+        // value: clue.value,
         airdate: clue.airdate,
         game_id: clue.game_id,
       });

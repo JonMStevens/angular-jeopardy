@@ -11,7 +11,7 @@ export class ClueSquareComponent implements OnInit {
   @Output() public clueClick = new EventEmitter();
   clicked = false;
 
-  constructor(private gameState: GameStateService) {}
+  constructor(public gameState: GameStateService) {}
 
   ngOnInit(): void {}
 
@@ -20,9 +20,5 @@ export class ClueSquareComponent implements OnInit {
       this.clicked = true;
       this.gameState.currentClue = this.clue;
     }
-  }
-
-  public get round(): number {
-    return this.gameState.round;
   }
 }

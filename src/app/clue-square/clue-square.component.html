@@ -1,8 +1,8 @@
 <p *ngIf="clue" (click)="onClueClick()">
   <span *ngIf="clicked" class="screen-reader-only"
-    >Clue complete: ${{ clue.question_number * 100 }}</span
+    >Clue complete: ${{ gameState.getClueValue(clue) }}</span
   >
   <span [ngClass]="{ clueComplete: clicked }"
-    >${{ clue.question_number * 100 * round }}</span
+    >${{ gameState.getClueValue(clue) }}</span
   >
 </p>

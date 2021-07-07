@@ -28,5 +28,9 @@ export class GameStateService {
     return this._roundChange$;
   }
 
+  public getClueValue(clue: Clue | null): number {
+    if (!clue) { return 0; }
+    return 200 * clue.question_number * this.round;
+  }
   constructor() {}
 }
