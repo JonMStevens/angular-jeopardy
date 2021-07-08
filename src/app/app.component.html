@@ -1,6 +1,6 @@
 <div class="boardView" [ngStyle]="{ display: showBoard() ? 'grid' : 'none' }">
   <app-board></app-board>
-  <div id="footer">
+  <div class="footer">
     <button *ngIf="showDoubleJeopardyButton()" (click)="startDoubleJeopardy()">
       double jeopardy
     </button>
@@ -13,10 +13,12 @@
         -
       </button>
     </div>
-    <app-player
-      *ngFor="let player of playerService.players"
-      [player]="player"
-    ></app-player>
+    <div>
+      <app-player
+        *ngFor="let player of playerService.players"
+        [player]="player"
+      ></app-player>
+    </div>
   </div>
 </div>
 <div [ngStyle]="{ display: !showBoard() ? 'inline-block' : 'none' }">

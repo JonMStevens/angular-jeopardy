@@ -1,0 +1,16 @@
+div {
+  outline: 1px solid;
+  padding: 10px;
+}
+
+div > *:not(:first-child) {
+  margin-top: 10px;
+}
+
+input {
+  width:100%;
+  text-align: center;
+}
+p {
+  text-align: center;
+}

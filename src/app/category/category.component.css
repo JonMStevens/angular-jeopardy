@@ -5,5 +5,7 @@ div {
   gap: 0px;
 }
 h2 {
-  margin: 0 auto;
+  padding: 3px;
+  text-align: center;
+  word-break: break-word;
 }
