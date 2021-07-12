@@ -4,7 +4,7 @@
     <button *ngIf="showDoubleJeopardyButton()" (click)="startDoubleJeopardy()">
       double jeopardy
     </button>
-    <div>
+    <div class="playerButtons">
       <button (click)="playerService.addPlayer()">+</button>
       <button
         *ngIf="playerService.players.length > 1"
@@ -13,7 +13,10 @@
         -
       </button>
     </div>
-    <div>
+    <div
+      class="players"
+      [ngClass]="{'playersHorizontal': playerService.players.length < 4, 'playersVertical': playerService.players.length >= 4 }"
+    >
       <app-player
         *ngFor="let player of playerService.players"
         [player]="player"
