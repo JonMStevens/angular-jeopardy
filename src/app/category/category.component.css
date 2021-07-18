@@ -1,19 +1,21 @@
 app-category div {
   height: 100%;
   display: grid;
+  grid-template-rows: 1.25fr 1fr 1fr 1fr 1fr 1fr;
 }
 app-category h2 {
-  padding: 3px;
+  display: flex;
+  flex-direction: column;
+  background-color: #060b7c;
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
   word-break: break-word;
   color: white;
   font-family: 'Yantramanav', sans-serif;
   font-size: 1.5rem;
   text-shadow: 2px 2px 0px #000000;
-  background-color: #060b7c;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 app-category h2 > i {
