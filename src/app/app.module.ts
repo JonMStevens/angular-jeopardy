@@ -10,6 +10,7 @@ import { QuestionScreenComponent } from './question-screen/question-screen.compo
 import { PlayerComponent } from './player/player.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     CategoryComponent,
     ClueSquareComponent,
     QuestionScreenComponent,
-    PlayerComponent
+    PlayerComponent,
+    GameComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
