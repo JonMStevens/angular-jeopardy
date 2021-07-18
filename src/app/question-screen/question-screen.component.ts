@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { GameStateService } from '../game-state.service';
 import { Player } from '../player';
 import { PlayerService } from '../player.service';
@@ -6,7 +6,8 @@ import { PlayerService } from '../player.service';
 @Component({
   selector: 'app-question-screen',
   templateUrl: './question-screen.component.html',
-  styleUrls: ['./question-screen.component.css']
+  styleUrls: ['./question-screen.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class QuestionScreenComponent implements OnInit {
   answerSeen = false;

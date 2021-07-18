@@ -2,6 +2,13 @@ p {
   height: 100%;
   text-align: center;
   outline: solid 1px black;
+  background-color: blue;
+}
+
+p > span {
+  font-family: 'Yantramanav', sans-serif;
+  color: yellow;
+  text-shadow: 2px 2px 0px #000000;
 }
 .clueComplete {
   visibility: hidden;

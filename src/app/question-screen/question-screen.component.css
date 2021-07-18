@@ -1,25 +1,33 @@
-div {
+app-question-screen div {
   outline: 1px solid black;
   height: 100%;
   width: 100%;
   display: inline-block;
   text-align: center;
 }
-div > * {
+app-question-screen div > * {
   margin-top: 20%;
 }
 
-button {
+app-question-screen button {
   margin: 10px;
 }
 
-p {
+app-question-screen p {
   width: 100%;
   text-transform: lowercase;
   font-size: 2em;
   margin-top: 20%;
+  font-family: 'afta_serifregular', serif;
 }
 
-p::first-letter {
+app-question-screen p::first-letter {
   text-transform: uppercase;
+}
+
+app-question-screen p > i {
+  width: 100%;
+  text-transform: initial;
+  font-size: 1em;
+  font-family: 'afta_serifitalic', serif;
 }

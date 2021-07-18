@@ -8,4 +8,8 @@ h2 {
   padding: 3px;
   text-align: center;
   word-break: break-word;
+  color: white;
+  font-family: 'Yantramanav', sans-serif;
+  text-shadow: 2px 2px 0px #000000;
+  background-color: blue;
 }
