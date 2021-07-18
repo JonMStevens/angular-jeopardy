@@ -1,8 +1,6 @@
-<p *ngIf="clue" (click)="onClueClick()">
+<p *ngIf="clue" [ngClass]="{ clueComplete: clicked }" (click)="onClueClick()">
   <span *ngIf="clicked" class="screen-reader-only"
     >Clue complete: ${{ gameState.getClueValue(clue) }}</span
   >
-  <span [ngClass]="{ clueComplete: clicked }"
-    >${{ gameState.getClueValue(clue) }}</span
-  >
+  <span>${{ gameState.getClueValue(clue) }}</span>
 </p>

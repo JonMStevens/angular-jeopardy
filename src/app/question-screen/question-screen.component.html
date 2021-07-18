@@ -1,9 +1,13 @@
-<div *ngIf="gameState.currentClue && !answerSeen">
+<div id="clueDiv" *ngIf="gameState.currentClue && !answerSeen">
   <p [innerHTML]="gameState.currentClue.question"></p>
+</div>
+<div id="answerDiv" *ngIf="gameState.currentClue && answerSeen">
+  <p [innerHTML]="gameState.currentClue.answer"></p>
+</div>
+<div *ngIf="!answerSeen" class="buttonDiv">
   <button (click)="showAnswer()">show answer</button>
 </div>
-<div *ngIf="gameState.currentClue && answerSeen">
-  <p [innerHTML]="gameState.currentClue.answer"></p>
+<div *ngIf="answerSeen" class="buttonDiv">
   <button
     *ngFor="let player of playerService.players"
     (click)="awardPoints(player)"

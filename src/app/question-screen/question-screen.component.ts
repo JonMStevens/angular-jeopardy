@@ -7,6 +7,8 @@ import { PlayerService } from '../player.service';
   selector: 'app-question-screen',
   templateUrl: './question-screen.component.html',
   styleUrls: ['./question-screen.component.css'],
+  /*  could have blocks such as <i>
+      with view encapsulation you cannot write rules for those blocks in css */
   encapsulation: ViewEncapsulation.None
 })
 export class QuestionScreenComponent implements OnInit {
@@ -21,6 +23,8 @@ export class QuestionScreenComponent implements OnInit {
     if (!this.gameState.currentClue) {
       // error, should never show this without a clue
       // todo throw error
+      this.showBoard();
+      return;
     }
   }
 

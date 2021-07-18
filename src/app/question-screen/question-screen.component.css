@@ -1,24 +1,24 @@
-app-question-screen div {
-  outline: 1px solid black;
-  height: 100%;
+app-question-screen > #clueDiv,
+app-question-screen > #answerDiv {
+  height: 90%;
   width: 100%;
-  display: inline-block;
-  text-align: center;
-}
-app-question-screen div > * {
-  margin-top: 20%;
-}
-
-app-question-screen button {
-  margin: 10px;
+  background-color: #060b7c;
+  color: white;
+  border: 2px solid #100f27;
+  position: relative;
 }
 
 app-question-screen p {
   width: 100%;
-  text-transform: lowercase;
-  font-size: 2em;
-  margin-top: 20%;
+  font-size: 2rem;
   font-family: 'afta_serifregular', serif;
+  position: absolute;
+  top: 40%;
+  text-align: center;
+}
+#answerDiv p {
+  text-decoration: underline;
+  text-underline-offset: 1rem;
 }
 
 app-question-screen p::first-letter {
@@ -26,8 +26,17 @@ app-question-screen p::first-letter {
 }
 
 app-question-screen p > i {
-  width: 100%;
-  text-transform: initial;
   font-size: 1em;
   font-family: 'afta_serifitalic', serif;
+}
+
+.buttonDiv {
+  background-color: white;
+  width: 100%;
+  height: 10%;
+  text-align: center;
+}
+.buttonDiv > button {
+  margin: 15px;
+  padding: 7px;
 }

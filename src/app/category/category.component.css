@@ -1,15 +1,28 @@
-div {
-  outline: 1px solid black;
+app-category div {
   height: 100%;
   display: grid;
-  gap: 0px;
 }
-h2 {
+app-category h2 {
   padding: 3px;
   text-align: center;
   word-break: break-word;
   color: white;
   font-family: 'Yantramanav', sans-serif;
+  font-size: 1.5rem;
   text-shadow: 2px 2px 0px #000000;
-  background-color: blue;
+  background-color: #060b7c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+app-category h2 > i {
+  font-size: 1em;
+}
+app-category h2 > i::before,
+app-category h2 > i::after {
+  content: '\00a0';
+}
+app-category div > * {
+  border: 2px solid #100f27;
 }

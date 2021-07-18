@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 0px;
-  outline: 1px solid black;
   height: 100%;
   width: 100%;
 }
