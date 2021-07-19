@@ -1,5 +1,12 @@
 <div class="boardView" [ngStyle]="{ display: showBoard() ? 'grid' : 'none' }">
-  <app-board></app-board>
+  <div class="board">
+    <app-category></app-category>
+    <app-category></app-category>
+    <app-category></app-category>
+    <app-category></app-category>
+    <app-category></app-category>
+    <app-category></app-category>
+  </div>
   <div class="footer">
     <button *ngIf="showDoubleJeopardyButton()" (click)="startDoubleJeopardy()">
       double jeopardy
@@ -15,7 +22,10 @@
     </div>
     <div
       class="players"
-      [ngClass]="{'playersHorizontal': playerService.players.length < 4, 'playersVertical': playerService.players.length >= 4 }"
+      [ngClass]="{
+        playersHorizontal: playerService.players.length < 4,
+        playersVertical: playerService.players.length >= 4
+      }"
     >
       <app-player
         *ngFor="let player of playerService.players"

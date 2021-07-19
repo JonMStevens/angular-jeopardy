@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BoardComponent } from './board/board.component';
 import { CategoryComponent } from './category/category.component';
 import { ClueSquareComponent as ClueSquareComponent } from './clue-square/clue-square.component';
 import { QuestionScreenComponent } from './question-screen/question-screen.component';
@@ -16,7 +15,6 @@ import { MenuComponent } from './menu/menu.component';
 @NgModule({
   declarations: [
     AppComponent,
-    BoardComponent,
     CategoryComponent,
     ClueSquareComponent,
     QuestionScreenComponent,
