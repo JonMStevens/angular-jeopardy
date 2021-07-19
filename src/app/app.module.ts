@@ -11,6 +11,7 @@ import { PlayerComponent } from './player/player.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GameComponent } from './game/game.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { GameComponent } from './game/game.component';
     ClueSquareComponent,
     QuestionScreenComponent,
     PlayerComponent,
-    GameComponent
+    GameComponent,
+    MenuComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
