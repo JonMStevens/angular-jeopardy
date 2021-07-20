@@ -1,0 +1,6 @@
+<div class="header"><p>Result</p></div>
+<div class="list">
+  <p *ngFor="let pl of this.players; index as i">
+    {{ i + 1 }}. Name: {{ pl.name }} Score: ${{ pl.score }}
+  </p>
+</div>

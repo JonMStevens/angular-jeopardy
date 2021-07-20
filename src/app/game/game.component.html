@@ -7,9 +7,13 @@
     <app-category></app-category>
     <app-category></app-category>
   </div>
+
   <div class="footer">
     <button *ngIf="showDoubleJeopardyButton()" (click)="startDoubleJeopardy()">
       double jeopardy
+    </button>
+    <button *ngIf="!showDoubleJeopardyButton()" routerLink="/end-screen">
+      finish
     </button>
     <div class="playerButtons">
       <button (click)="playerService.addPlayer()">+</button>

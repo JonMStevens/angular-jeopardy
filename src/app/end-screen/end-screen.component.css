@@ -1,0 +1,27 @@
+:host {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+div {
+  background-color: #060b7c;
+}
+p {
+  font-family: 'Yantramanav', sans-serif;
+  text-shadow: 2px 2px 0px #000000;
+}
+
+.header > p {
+  font-size: 3rem;
+  color: #eebe74;
+  text-align: center;
+}
+
+.list > p {
+  color: white;
+  font-size: 2rem;
+}
+.list > p:not(:last-of-type) {
+  margin-bottom: 15px;
+}
