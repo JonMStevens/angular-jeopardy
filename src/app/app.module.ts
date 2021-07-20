@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GameComponent } from './game/game.component';
 import { MenuComponent } from './menu/menu.component';
 import { EndScreenComponent } from './end-screen/end-screen.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EndScreenComponent } from './end-screen/end-screen.component';
     PlayerComponent,
     GameComponent,
     MenuComponent,
-    EndScreenComponent
+    EndScreenComponent,
+    PageNotFoundComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
