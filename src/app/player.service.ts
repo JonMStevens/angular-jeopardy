@@ -4,7 +4,7 @@ import { Player } from './player';
   providedIn: 'root'
 })
 export class PlayerService {
-  public _players: Player[] = [{number: 1, name: "Player 1", score: 0}];
+  public _players: Player[] = [{ number: 1, name: 'Player 1', score: 0 }];
   public get players(): Player[] {
     return this._players;
   }
@@ -18,9 +18,20 @@ export class PlayerService {
     });
   }
 
-  public removePlayer() : void {
-    if (this._players.length < 2) { return; }
+  public removePlayer(): void {
+    if (this._players.length < 2) {
+      return;
+    }
     this._players.pop();
   }
+
+  public reset(): void {
+    this._players = [{ number: 1, name: 'Player 1', score: 0 }];
+  }
+
+  public resetScores(): void {
+    this._players.forEach((player) => (player.score = 0));
+  }
+
   constructor() {}
 }
