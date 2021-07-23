@@ -1,0 +1,43 @@
+p {
+  margin-bottom: 5px;
+}
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: 0.2s all linear;
+  margin-right: 15px;
+}
+
+input:before {
+  border: 2px solid #999;
+  font-size: 2rem;
+}
+
+input:not(:checked):before {
+  color: #999;
+}
+
+#rulingCorrect::before {
+  content: '+';
+}
+#rulingCorrect:checked::before {
+  color: green;
+  border-color: green;
+}
+
+#rulingNoResponse::before {
+  content: '...';
+}
+#rulingNoResponse:checked::before {
+  color: black;
+  border-color: black;
+}
+
+#rulingIncorrect::before {
+  content: '-';
+}
+#rulingIncorrect:checked::before {
+  color: red;
+  border-color: red;
+}

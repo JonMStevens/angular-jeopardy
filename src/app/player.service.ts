@@ -4,13 +4,13 @@ import { Player } from './player';
   providedIn: 'root'
 })
 export class PlayerService {
-  public _players: Player[] = [{ number: 1, name: 'Player 1', score: 0 }];
+  public _players: Player[] = [{ number: 0, name: 'Player 1', score: 0 }];
   public get players(): Player[] {
     return this._players;
   }
 
   public addPlayer(): void {
-    const playerNumber = this._players.length + 1;
+    const playerNumber = this._players.length;
     this._players.push({
       number: playerNumber,
       name: 'Player ' + playerNumber.toString(),

@@ -1,4 +1,4 @@
-app-question-screen > #clueDiv,
+app-question-screen > #questionDiv,
 app-question-screen > #answerDiv {
   height: 90%;
   width: 100%;
@@ -8,7 +8,8 @@ app-question-screen > #answerDiv {
   position: relative;
 }
 
-app-question-screen p {
+app-question-screen #questionDiv > p,
+app-question-screen #answerDiv > p {
   width: 100%;
   font-size: 2rem;
   font-family: 'afta_serifregular', serif;
@@ -21,11 +22,8 @@ app-question-screen p {
   text-underline-offset: 1rem;
 }
 
-app-question-screen p::first-letter {
-  text-transform: uppercase;
-}
-
-app-question-screen p > i {
+app-question-screen #questionDiv > p > i,
+app-question-screen #answerDiv > p > i {
   font-size: 1em;
   font-family: 'afta_serifitalic', serif;
 }

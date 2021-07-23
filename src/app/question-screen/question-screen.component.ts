@@ -13,7 +13,7 @@ import { PlayerService } from '../player.service';
 })
 export class QuestionScreenComponent implements OnInit {
   answerSeen = false;
-
+  results: number[] = [];
   constructor(
     public gameState: GameStateService,
     public playerService: PlayerService
@@ -37,8 +37,17 @@ export class QuestionScreenComponent implements OnInit {
     this.gameState.currentClue = null;
   }
 
-  awardPoints(player: Player): void {
-    player.score += this.gameState.getClueValue(this.gameState.currentClue);
+  onRulingChange(result: number, player: Player): void {
+    this.results[player.number] = result;
+  }
+
+  awardPoints(): void {
+    this.results.forEach(
+      (result, i) =>
+        (this.playerService.players[i].score +=
+          result * this.gameState.getClueValue(this.gameState.currentClue))
+    );
+    this.results = [];
     this.showBoard();
   }
 }

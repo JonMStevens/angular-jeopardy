@@ -1,0 +1,30 @@
+<form>
+  <div *ngIf="player">
+    <p>{{ player.name }}</p>
+    <input
+      #rulingCorrect
+      type="radio"
+      name="ruling"
+      id="rulingCorrect"
+      (change)="onRulingChange(1)"
+    />
+    <label for="rulingCorrect" class="screen-reader-only">Correct</label>
+    <input
+      #rulingNoResponse
+      type="radio"
+      name="ruling"
+      id="rulingNoResponse"
+      checked
+      (change)="onRulingChange(0)"
+    />
+    <label for="rulingNoResponse" class="screen-reader-only">No Response</label>
+    <input
+      #rulingIncorrect
+      type="radio"
+      name="ruling"
+      id="rulingIncorrect"
+      (change)="onRulingChange(-1)"
+    />
+    <label for="rulingIncorrect" class="screen-reader-only">Incorrect</label>
+  </div>
+</form>
