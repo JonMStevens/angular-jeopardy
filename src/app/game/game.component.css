@@ -51,6 +51,14 @@ div > div {
   margin-top: 5px;
 }
 
+.playerButtons > button {
+  max-height: calc(50% - 2.5px);
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
 .board {
   display: grid;
   grid-template-columns: repeat(6, 1fr);

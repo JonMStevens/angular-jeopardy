@@ -1,0 +1,17 @@
+div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+div > * {
+  margin: 15px;
+}
+div > p {
+  font-size: 2rem;
+}
+div > p > span {
+  font-size: 1.5rem;
+}

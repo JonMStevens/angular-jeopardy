@@ -3,30 +3,63 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-content: center;
 }
 
 div {
-  background-color: #060b7c;
+  width: 50%;
+  margin: 0 auto 0px auto;
+  padding: 20px;
+  border-top: 0px;
+  border-right: 1px solid black;
+  border-bottom: 0px;
+  border-left: 1px solid black;
 }
+
+div:first-of-type {
+  margin-top: 20px;
+  border: 0px;
+}
+
+div:nth-of-type(2) {
+  border-top: 1px solid black;
+}
+
+div:last-of-type {
+  border-bottom: 1px solid black;
+}
+
 p {
-  font-family: 'Yantramanav', sans-serif;
-  text-shadow: 2px 2px 0px #000000;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  font-weight: bold;
+  letter-spacing: 0.75rem;
+  flex: 1;
 }
 
 .header > p {
   font-size: 3rem;
-  color: #eebe74;
   text-align: center;
 }
 
-.header app-restart-button {
-  float: left;
+.list {
+  flex: 9;
+  margin-bottom: 20px;
 }
 
-.list > p {
-  color: white;
-  font-size: 2rem;
+.list li {
+  margin-left: 15px;
 }
-.list > p:not(:last-of-type) {
+.list li:not(:last-of-type) {
   margin-bottom: 15px;
+}
+
+.list li > p {
+  font-size: 1.5rem;
+  color: black;
+}
+.list li > p > span {
+  font-size: 2rem;
 }
