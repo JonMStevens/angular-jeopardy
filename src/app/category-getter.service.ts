@@ -42,7 +42,7 @@ export class CategoryGetterService {
 
     // todo figure out how many categories are available and set limit at that id
     const requestUrl = `https://jservice.io/api/category?id=${
-      1 + this.randomInt(3000)
+      1 + this.randomInt(18418)
     }`;
 
     return this.http.get<Category>(requestUrl).pipe(
@@ -67,10 +67,16 @@ export class CategoryGetterService {
 
     for (let index = 0; index < category.clues.length; index++) {
       const clue = category.clues[index];
+
+      if (!clue.question) {
+        /* todo: report this question to the service */
+        clue.question = '*Error*: Clue was a video/audio/picture question';
+      }
+
       clues.push({
         id: clue.id,
-        answer: clue.answer,
-        question: clue.question,
+        answer: clue.answer.replace('\\', ''),
+        question: clue.question.replace('\\', ''),
         question_number: (index % 5) + 1,
         airdate: clue.airdate,
         game_id: clue.game_id
