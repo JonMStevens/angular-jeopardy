@@ -1,4 +1,4 @@
 <div *ngIf="player">
   <input type="text" [(ngModel)]="player.name" />
-  <p>${{player.score}}</p>
+  <p>{{ player.score | currency: 'USD':'symbol':'1.0-0' }}</p>
 </div>

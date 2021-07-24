@@ -2,5 +2,7 @@
   <span *ngIf="clicked" class="screen-reader-only"
     >Clue complete: ${{ gameState.getClueValue(clue) }}</span
   >
-  <span>${{ gameState.getClueValue(clue) }}</span>
+  <span>{{
+    gameState.getClueValue(clue) | currency: 'USD':'symbol':'1.0-0'
+  }}</span>
 </p>

@@ -11,7 +11,7 @@
         Name: <span>{{ pl.name }}</span>
       </p>
       <p>
-        Score: <span>${{ pl.score }}</span>
+        Score: <span>{{ pl.score | currency: 'USD':'symbol':'1.0-0' }}</span>
       </p>
     </li>
   </ol>
