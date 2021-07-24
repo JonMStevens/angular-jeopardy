@@ -14,6 +14,7 @@ import { MenuComponent } from './menu/menu.component';
 import { EndScreenComponent } from './end-screen/end-screen.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RestartButtonComponent } from './restart-button/restart-button.component';
+import { PlayerScorerComponent } from './player-scorer/player-scorer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RestartButtonComponent } from './restart-button/restart-button.componen
     MenuComponent,
     EndScreenComponent,
     PageNotFoundComponent,
-    RestartButtonComponent
+    RestartButtonComponent,
+    PlayerScorerComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
