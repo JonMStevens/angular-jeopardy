@@ -34,7 +34,7 @@ button {
 }
 
 button:hover {
-  background-color: lightgray;
+  background-color: #ebebeb;
 }
 /* not the best dupe for the actual font (ITC Korinna)*/
 @font-face {

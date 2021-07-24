@@ -1,3 +1,6 @@
+:host {
+  display: inline-block;
+}
 p {
   margin-bottom: 5px;
 }
@@ -5,13 +8,23 @@ input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  transition: 0.2s all linear;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+input:not(:last-of-type) {
   margin-right: 15px;
 }
 
 input:before {
+  transition: 0.1s all linear;
   border: 2px solid #999;
   font-size: 2rem;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
 }
 
 input:not(:checked):before {
@@ -19,25 +32,44 @@ input:not(:checked):before {
 }
 
 #rulingCorrect::before {
-  content: '+';
+  content: '\2713';
 }
+
+#rulingCorrect:hover::before {
+  color: #0b7c06;
+  border-color: #0b7c06;
+}
+
 #rulingCorrect:checked::before {
-  color: green;
-  border-color: green;
+  color: #0b7c06;
+  border-color: #0b7c06;
+  background-color: #0b7c0636;
 }
 
 #rulingNoResponse::before {
-  content: '...';
+  content: '\2022';
 }
+#rulingNoResponse:hover::before {
+  color: #000;
+  border-color: #000;
+}
+
 #rulingNoResponse:checked::before {
-  color: black;
-  border-color: black;
+  color: #000;
+  border-color: #000;
+  background-color: #ebebeb;
 }
 
 #rulingIncorrect::before {
-  content: '-';
+  content: 'X';
 }
+#rulingIncorrect:hover::before {
+  color: #7c060b;
+  border-color: #7c060b;
+}
+
 #rulingIncorrect:checked::before {
-  color: red;
-  border-color: red;
+  color: #7c060b;
+  border-color: #7c060b;
+  background-color: #7c060b36;
 }

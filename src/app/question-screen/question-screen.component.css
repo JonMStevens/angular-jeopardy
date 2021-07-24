@@ -34,7 +34,12 @@ app-question-screen #answerDiv > p > i {
   height: 10%;
   text-align: center;
 }
-.buttonDiv > button {
+.buttonDiv > button,
+.buttonDiv > app-player-scorer {
   margin: 15px;
-  padding: 7px;
+}
+
+.buttonDiv > button {
+  position: relative;
+  top: -5px;
 }
