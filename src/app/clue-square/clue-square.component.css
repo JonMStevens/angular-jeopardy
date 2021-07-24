@@ -1,5 +1,6 @@
-p {
+button {
   height: 100%;
+  width: 100%;
   text-align: center;
   background-color: #060b7c;
   display: flex;
@@ -7,7 +8,7 @@ p {
   align-items: center;
   /* outline: 1px solid black; */
 }
-p:not(.clueComplete):hover {
+button:not(.clueComplete):hover {
   -webkit-transition: 0.25s;
   -moz-transition: 0.25s;
   -ms-transition: 0.25s;
@@ -15,7 +16,7 @@ p:not(.clueComplete):hover {
   transition: 0.25s;
   background-color: #100f27;
 }
-p > span {
+button > span {
   font-family: 'Yantramanav', sans-serif;
   color: #eebe74;
   text-shadow: 2px 2px 0px #000000;
