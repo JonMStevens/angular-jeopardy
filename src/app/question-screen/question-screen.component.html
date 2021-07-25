@@ -1,11 +1,11 @@
 <div id="questionDiv" *ngIf="gameState.currentClue && !answerSeen">
-  <p [innerHTML]="gameState.currentClue.question"></p>
+  <p [innerHTML]="gameState.currentClue.question" tabindex="1"></p>
 </div>
 <div id="answerDiv" *ngIf="gameState.currentClue && answerSeen">
-  <p [innerHTML]="gameState.currentClue.answer"></p>
+  <p [innerHTML]="gameState.currentClue.answer" tabindex="1"></p>
 </div>
 <div *ngIf="!answerSeen" class="buttonDiv">
-  <button (click)="showAnswer()">show answer</button>
+  <button (click)="showAnswer()" tabindex="2">show answer</button>
 </div>
 <div *ngIf="answerSeen" class="buttonDiv">
   <app-player-scorer
@@ -13,5 +13,5 @@
     [player]="player"
     (rulingChange)="onRulingChange($event, player)"
   ></app-player-scorer>
-  <button (click)="awardPoints()">continue</button>
+  <button (click)="awardPoints()" tabindex="2">continue</button>
 </div>
