@@ -8,7 +8,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 const routes: Routes = [
   { path: 'game', component: GameComponent },
   { path: '', redirectTo: '/menu', pathMatch: 'full' },
-  { path: 'jeopardy', redirectTo: '/menu', pathMatch: 'full' },
   { path: 'menu', component: MenuComponent },
   { path: 'end-screen', component: EndScreenComponent },
   { path: '**', component: PageNotFoundComponent }
