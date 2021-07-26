@@ -14,7 +14,6 @@ export class PlayerScorerComponent implements OnInit {
 
   ngOnInit(): void {}
   onRulingChange(ruling: number): void {
-    console.log('changed ' + ruling);
     this.rulingChange.emit(ruling);
   }
 }
