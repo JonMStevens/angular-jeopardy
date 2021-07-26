@@ -13,7 +13,7 @@ export class PlayerService {
     const playerNumber = this._players.length;
     this._players.push({
       number: playerNumber,
-      name: 'Player ' + playerNumber.toString(),
+      name: 'Player ' + (playerNumber + 1).toString(),
       score: 0
     });
   }
