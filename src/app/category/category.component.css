@@ -18,6 +18,10 @@ app-category h2 {
   text-shadow: 2px 2px 0px #000000;
 }
 
+app-category .errorCategory h2 {
+  background-color: #7c060b;
+}
+
 app-category h2 > i {
   font-size: 1em;
 }

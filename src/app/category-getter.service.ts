@@ -12,7 +12,7 @@ export class CategoryGetterService {
   private readonly FAKE_CATEGORY_JS =
     '{"id": 55,"title": "sport <i>of</i> kings","clues_count": 25,"clues": [{"id": 303,"answer": "bet on horses","question": "The <i>pari-mutuel</i> system lets you do it legally","value": 100,"airdate": "1984-11-29T12:00:00.000Z","category_id": 55,"game_id": null,"invalid_count": null},{"id": 309,"answer": "a handicap","question": "Race where faster horses carry more weight than slower ones","value": 200,"airdate": "1984-11-29T12:00:00.000Z","category_id": 55,"game_id": null,"invalid_count": null},{"id": 315,"answer": "a mudder","question": "Race horse that runs well on a wet track, or a Bronx mommy","value": 300,"airdate": "1984-11-29T12:00:00.000Z","category_id": 55,"game_id": null,"invalid_count": null},{"id": 327,"answer": "J. Paul Getty","question": "Question was missing!","value": null,"airdate": "1984-11-29T12:00:00.000Z","category_id": 55,"game_id": null,"invalid_count": null},{"id": 321,"answer": "Adam Clayton Powell","question": "Question was missing!","value": null,"airdate": "1984-11-29T12:00:00.000Z","category_id": 55,"game_id": null,"invalid_count": 1}]}';
 
-  private readonly errorClue: Clue = {
+  public readonly errorClue: Clue = {
     id: 0,
     answer: 'error',
     question: 'error',
@@ -20,7 +20,7 @@ export class CategoryGetterService {
     airdate: null,
     game_id: null
   };
-  private readonly errorCategory: Category = {
+  public readonly errorCategory: Category = {
     id: 0,
     title: 'error',
     clues: [
@@ -60,10 +60,15 @@ export class CategoryGetterService {
     );
   }
   private fixClues(category: Category): Category {
-    const clues: Clue[] = [];
+    const fixedClues: Clue[] = [];
 
-    /* todo this should be a random 5 clues, not just the first 5 */
-    category.clues = category.clues.slice(0, 5);
+    const categoryStartingClueIndex = this.getRandomCategoryStartingClueIndex(
+      category.clues.length
+    );
+    category.clues = category.clues.slice(
+      categoryStartingClueIndex,
+      categoryStartingClueIndex + 5
+    );
 
     for (let index = 0; index < category.clues.length; index++) {
       const clue = category.clues[index];
@@ -73,7 +78,7 @@ export class CategoryGetterService {
         clue.question = '*Error*: Clue was a video/audio/picture question';
       }
 
-      clues.push({
+      fixedClues.push({
         id: clue.id,
         answer: clue.answer.replace('\\', ''),
         question: clue.question.replace('\\', ''),
@@ -82,7 +87,7 @@ export class CategoryGetterService {
         game_id: clue.game_id
       });
     }
-    category.clues = clues;
+    category.clues = fixedClues;
     return category;
   }
 
@@ -90,6 +95,15 @@ export class CategoryGetterService {
     return Math.floor(Math.random() * limit);
   }
 
+  /** Get the index of a clue that started a category */
+  private getRandomCategoryStartingClueIndex(clueCount: number): number {
+    /* Returns the index of a clue that started a category.
+            Since some categories get reused a category may have more than 5 clues in it.
+            I am assuming they will be added 5 at a time.
+            A category starting clue should then be at an index divisible by 5. */
+    const gameCount = clueCount / 5;
+    return 5 * this.randomInt(gameCount);
+  }
   private getFakeCategory$(): Observable<Category> {
     const category: Category = JSON.parse(this.FAKE_CATEGORY_JS);
     this.fixClues(category);

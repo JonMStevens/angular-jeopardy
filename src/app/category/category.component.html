@@ -1,7 +1,8 @@
-<div *ngIf="category">
+<div *ngIf="category" [ngClass]="{ errorCategory: isErrorCategory() }">
   <h2 [innerHTML]="category.title"></h2>
   <app-clue-square
     *ngFor="let clue of category.clues"
     [clue]="clue"
+    [ngClass]="{ errorClue: isErrorCategory() }"
   ></app-clue-square>
 </div>

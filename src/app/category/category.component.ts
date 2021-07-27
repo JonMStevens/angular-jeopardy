@@ -30,4 +30,6 @@ export class CategoryComponent implements OnInit {
       .getCategory$()
       .subscribe((category) => (this.category = category));
   }
+  isErrorCategory = (): boolean =>
+    this.category === this.categoryGetterService.errorCategory;
 }

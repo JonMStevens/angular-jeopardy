@@ -8,6 +8,11 @@ button {
   align-items: center;
   border: 0;
 }
+
+:host.errorClue button {
+  background-color: #7c060b;
+}
+
 button:not(.clueComplete):hover {
   -webkit-transition: 0.25s;
   -moz-transition: 0.25s;
