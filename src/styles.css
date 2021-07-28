@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --jeopardy-foreground-blue: #060b7c;
+  --jeopardy-background-blue: #100f27;
+  --jeopardy-font-yellow: #eebe74;
+  --error-red: #7c060b;
+}
+
 * {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;

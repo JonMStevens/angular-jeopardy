@@ -68,3 +68,10 @@ div > div {
   background-color: #100f27;
   border: 1px solid #100f27;
 }
+
+@supports (--custom: property) {
+  .board {
+    background-color: var(--jeopardy-background-blue);
+    border-color: var(--jeopardy-background-blue);
+  }
+}
