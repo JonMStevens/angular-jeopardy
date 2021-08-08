@@ -59,6 +59,9 @@ div > div {
   justify-items: center;
   align-items: center;
 }
+.playerButtons fa-icon {
+  font-size: 1.35rem;
+}
 
 .board {
   display: grid;
