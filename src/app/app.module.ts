@@ -15,7 +15,7 @@ import { EndScreenComponent } from './end-screen/end-screen.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RestartButtonComponent } from './restart-button/restart-button.component';
 import { PlayerScorerComponent } from './player-scorer/player-scorer.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +30,13 @@ import { PlayerScorerComponent } from './player-scorer/player-scorer.component';
     RestartButtonComponent,
     PlayerScorerComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    FontAwesomeModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -19,6 +19,7 @@ div > div {
   grid-template-columns: 1fr 1fr 1fr 4fr;
   grid-gap: 10px;
   margin: 10px 0 0 0;
+  text-align: center;
 }
 .footer button {
   width: 100%;

@@ -30,6 +30,11 @@ p {
   margin-top: 20px;
   align-content: center;
   padding-bottom: 40px;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .header > app-restart-button {
@@ -42,7 +47,7 @@ p {
   }
   .header > app-restart-button {
     position: absolute;
-    left: -132px;
+    left: -86px;
   }
 }
 

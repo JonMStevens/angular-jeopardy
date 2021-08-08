@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GameStateService } from '../game-state.service';
 import { PlayerService } from '../player.service';
+import { faUndo } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-restart-button',
@@ -8,6 +9,7 @@ import { PlayerService } from '../player.service';
   styleUrls: ['./restart-button.component.css']
 })
 export class RestartButtonComponent implements OnInit {
+  faUndo = faUndo;
   constructor(
     private gameState: GameStateService,
     private playerService: PlayerService
