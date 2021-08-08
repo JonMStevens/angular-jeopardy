@@ -21,6 +21,7 @@ button:not(.clueComplete):hover {
   transition: 0.25s;
   background-color: #100f27;
 }
+
 button > span {
   font-family: 'Yantramanav', sans-serif;
   color: #eebe74;
@@ -29,4 +30,21 @@ button > span {
 }
 .clueComplete > span:nth-of-type(2) {
   visibility: hidden;
+}
+
+@supports (--custom: property) {
+  button {
+    background-color: var(--jeopardy-foreground-blue);
+  }
+
+  button:not(.clueComplete):hover {
+    background-color: var(--jeopardy-background-blue);
+  }
+
+  :host.errorClue button {
+    background-color: var(--error-red);
+  }
+  button > span {
+    color: var(--jeopardy-font-yellow);
+  }
 }

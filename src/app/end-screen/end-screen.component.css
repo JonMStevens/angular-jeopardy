@@ -16,19 +16,6 @@ div {
   border-left: 1px solid black;
 }
 
-div:first-of-type {
-  margin-top: 20px;
-  border: 0px;
-}
-
-div:nth-of-type(2) {
-  border-top: 1px solid black;
-}
-
-div:last-of-type {
-  border-bottom: 1px solid black;
-}
-
 p {
   font-family: 'Roboto', sans-serif;
 }
@@ -37,6 +24,26 @@ p {
   font-weight: bold;
   letter-spacing: 0.75rem;
   flex: 1;
+  position: relative;
+  border: 1px solid black;
+  border-bottom: 0px;
+  margin-top: 20px;
+  align-content: center;
+  padding-bottom: 40px;
+}
+
+.header > app-restart-button {
+  position: static;
+}
+
+@media screen and (min-width: 700px) {
+  .header {
+    padding-bottom: 0px;
+  }
+  .header > app-restart-button {
+    position: absolute;
+    left: -162px;
+  }
 }
 
 .header > p {
@@ -47,6 +54,7 @@ p {
 .list {
   flex: 9;
   margin-bottom: 20px;
+  border-bottom: 1px solid black;
 }
 
 .list li {

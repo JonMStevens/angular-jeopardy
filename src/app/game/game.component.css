@@ -19,6 +19,7 @@ div > div {
   grid-template-columns: 1fr 1fr 1fr 4fr;
   grid-gap: 10px;
   margin: 10px 0 0 0;
+  text-align: center;
 }
 .footer button {
   width: 100%;
@@ -58,6 +59,9 @@ div > div {
   justify-items: center;
   align-items: center;
 }
+.playerButtons fa-icon {
+  font-size: 1.35rem;
+}
 
 .board {
   display: grid;
@@ -67,4 +71,11 @@ div > div {
   width: 100%;
   background-color: #100f27;
   border: 1px solid #100f27;
+}
+
+@supports (--custom: property) {
+  .board {
+    background-color: var(--jeopardy-background-blue);
+    border-color: var(--jeopardy-background-blue);
+  }
 }

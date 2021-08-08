@@ -43,3 +43,11 @@ app-question-screen #answerDiv > p > i {
   position: relative;
   top: -5px;
 }
+
+@supports (--custom: property) {
+  app-question-screen > #questionDiv,
+  app-question-screen > #answerDiv {
+    background-color: var(--jeopardy-foreground-blue);
+    border-color: var(--jeopardy-background-blue);
+  }
+}
