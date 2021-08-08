@@ -2,17 +2,9 @@ button {
   width: 75px;
   height: 75px;
   border-radius: 50%;
-  border: 2px solid gray;
-  color: gray;
-  background-color: #ebebeb;
   padding: 7px 0 0 1px;
-  transition: 0.1s all linear;
 }
 
-button:hover {
-  border-color: black;
-  color: black;
-}
 fa-icon {
   font-size: 45px;
 }

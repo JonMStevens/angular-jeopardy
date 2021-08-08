@@ -31,18 +31,23 @@ body {
   overflow: hidden;
 }
 button {
-  /* background-color: #eebd74; */
   background-color: white;
   border: 1px solid black;
-  font-family: 'Roboto', sans-serif;
   color: black;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
   padding: 10px;
+  transition: 0.1s all linear;
 }
 
 button:hover {
   background-color: #ebebeb;
 }
+
+input[type='text'] {
+  border: 1px solid black;
+}
+
 /* not the best dupe for the actual font (ITC Korinna)*/
 @font-face {
   font-family: 'afta_serifregular';
