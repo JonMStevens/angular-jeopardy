@@ -1,31 +1,30 @@
 app-question-screen > #questionDiv,
 app-question-screen > #answerDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   height: 90%;
   width: 100%;
   background-color: #060b7c;
   color: white;
   border: 2px solid #100f27;
-  position: relative;
+}
+:is(#answerDiv, #questionDiv) :is(p, p > i) {
+  width: 80%;
+  font-size: 2.6rem;
+  font-family: 'Merriweather', serif;
+  text-transform: initial;
+  line-height: 3rem;
 }
 
-app-question-screen #questionDiv > p,
-app-question-screen #answerDiv > p {
-  width: 100%;
-  font-size: 2rem;
-  font-family: 'afta_serifregular', serif;
-  position: absolute;
-  top: 40%;
-  text-align: center;
+:is(#answerDiv, #questionDiv) :is(p, p > i)::first-letter {
+  text-transform: uppercase;
 }
+
 #answerDiv p {
   text-decoration: underline;
   text-underline-offset: 1rem;
-}
-
-app-question-screen #questionDiv > p > i,
-app-question-screen #answerDiv > p > i {
-  font-size: 1em;
-  font-family: 'afta_serifitalic', serif;
 }
 
 .buttonDiv {
@@ -36,7 +35,7 @@ app-question-screen #answerDiv > p > i {
 }
 .buttonDiv > button,
 .buttonDiv > app-player-scorer {
-  margin: 15px;
+  margin: 1rem 1rem 0 1rem;
 }
 
 .buttonDiv > button {
