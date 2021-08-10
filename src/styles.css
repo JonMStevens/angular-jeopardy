@@ -48,22 +48,3 @@ input[type='text'] {
   border: 1px solid black;
 }
 
-/* not the best dupe for the actual font (ITC Korinna)*/
-@font-face {
-  font-family: 'afta_serifregular';
-  src: url('./assets/fonts/afta-serif/aftaserifthin-regular-webfont.woff2')
-      format('woff2'),
-    url('./assets/fonts/afta-serif/aftaserifthin-regular-webfont.woff')
-      format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'afta_serifitalic';
-  src: url('./assets/fonts/afta-serif/aftaserifthin-italic-webfont.woff2')
-      format('woff2'),
-    url('./assets/fonts/afta-serif/aftaserifthin-italic-webfont.woff')
-      format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
