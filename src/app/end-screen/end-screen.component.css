@@ -9,11 +9,7 @@
 div {
   width: 50%;
   margin: 0 auto 0px auto;
-  padding: 20px;
-  border-top: 0px;
-  border-right: 1px solid black;
-  border-bottom: 0px;
-  border-left: 1px solid black;
+  padding-top: 20px;
 }
 
 p {
@@ -25,9 +21,6 @@ p {
   letter-spacing: 0.75rem;
   flex: 1;
   position: relative;
-  border: 1px solid black;
-  border-bottom: 0px;
-  margin-top: 20px;
   align-content: center;
   padding-bottom: 40px;
 }
@@ -54,20 +47,59 @@ p {
 .list {
   flex: 9;
   margin-bottom: 20px;
-  border-bottom: 1px solid black;
+}
+ol {
+  list-style: none;
+  counter-reset: player-counter;
+}
+li {
+  counter-increment: player-counter;
+  background-color: #ebebeb;
+  position: relative;
+  height: 3.5rem;
+  line-height: 3.5rem;
 }
 
-.list li {
-  margin-left: 15px;
-}
-.list li:not(:last-of-type) {
+li:not(:last-of-type) {
   margin-bottom: 15px;
 }
 
-.list li > p {
+li::before {
+  content: counter(player-counter);
+  position: absolute;
+  background-color: var(--jeopardy-foreground-blue);
+  font-family: 'Yantramanav', sans-serif;
+  text-shadow: 2px 2px 0px #000000;
+  color: var(--jeopardy-font-yellow);
+  top: 0.5rem;
+  left: -1.5rem;
+  width: 2.25rem;
+  height: 2.5rem;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* adjustments for double digit markers */
+li:nth-of-type(n + 10)::before {
+  width: 3rem;
+}
+
+li:nth-of-type(n + 10) p:first-of-type {
+  left: 2rem;
+}
+
+li > p {
+  position: absolute;
   font-size: 1.5rem;
   color: black;
+  font-size: 1.5rem;
 }
-.list li > p > span {
-  font-size: 2rem;
+
+.name {
+  left: 1.25rem;
+}
+.score {
+  right: 0.5rem;
 }

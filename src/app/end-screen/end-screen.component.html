@@ -5,11 +5,11 @@
 <div class="list">
   <ol>
     <li *ngFor="let pl of this.players; index as i">
-      <p>
-        Name: <span>{{ pl.name }}</span>
+      <p class="name">
+        {{ pl.name }}
       </p>
-      <p>
-        Score: <span>{{ pl.score | currency: 'USD':'symbol':'1.0-0' }}</span>
+      <p class="score">
+        {{ pl.score | currency: 'USD':'symbol':'1.0-0' }}
       </p>
     </li>
   </ol>
