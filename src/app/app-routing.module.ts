@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EndScreenComponent } from './end-screen/end-screen.component';
-import { GameComponent } from './game/game.component';
+import { GameComponent } from './game-components/game/game.component';
 import { MenuComponent } from './menu/menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 

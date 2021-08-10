@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GameStateService } from '../game-state.service';
-import { PlayerService } from '../player.service';
+import { GameStateService } from '../../game-state.service';
+import { PlayerService } from '../../player.service';
 import { faUserPlus, faUserMinus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
