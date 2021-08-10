@@ -16,6 +16,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { RestartButtonComponent } from './restart-button/restart-button.component';
 import { PlayerScorerComponent } from './player-scorer/player-scorer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CoryatBoardComponent } from './coryat/coryat-board/coryat-board.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     EndScreenComponent,
     PageNotFoundComponent,
     RestartButtonComponent,
-    PlayerScorerComponent
+    PlayerScorerComponent,
+    CoryatBoardComponent
   ],
   imports: [
     BrowserModule,
