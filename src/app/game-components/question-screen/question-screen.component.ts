@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { GameStateService } from '../game-state.service';
-import { Player } from '../player';
-import { PlayerService } from '../player.service';
+import { GameStateService } from '../../game-state.service';
+import { Player } from '../../player';
+import { PlayerService } from '../../player.service';
 
 @Component({
   selector: 'app-question-screen',
