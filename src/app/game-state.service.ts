@@ -6,6 +6,14 @@ import { Clue } from './clue';
   providedIn: 'root'
 })
 export class GameStateService {
+  private _inGameMode = true;
+  public get inGameMode(): boolean {
+    return this._inGameMode;
+  }
+  public set inGameMode(value: boolean) {
+    this._inGameMode = value;
+  }
+
   private _round = 1;
   public get round(): number {
     return this._round;
