@@ -16,9 +16,15 @@ export class ClueSquareComponent implements OnInit {
   ngOnInit(): void {}
 
   onClueClick(): void {
+    if (this.gameState.inCoryatMode) {
+      this.gameState.currentClue = this.clue;
+      return;
+    }
+
     if (!this.clicked) {
       this.clicked = true;
       this.gameState.currentClue = this.clue;
+      return;
     }
   }
 }
