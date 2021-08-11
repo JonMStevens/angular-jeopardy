@@ -6,12 +6,12 @@ import { Clue } from './clue';
   providedIn: 'root'
 })
 export class GameStateService {
-  private _inGameMode = true;
-  public get inGameMode(): boolean {
-    return this._inGameMode;
+  private _inCoryatMode = true;
+  public get inCoryatMode(): boolean {
+    return this._inCoryatMode;
   }
-  public set inGameMode(value: boolean) {
-    this._inGameMode = value;
+  public set inCoryatMode(value: boolean) {
+    this._inCoryatMode = value;
   }
 
   private _round = 1;
