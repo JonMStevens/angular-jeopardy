@@ -1,37 +1,33 @@
-<div class="footer">
-  <app-restart-button></app-restart-button>
-  <button *ngIf="showDoubleJeopardyButton()" (click)="startDoubleJeopardy()">
-    double jeopardy
+<app-restart-button></app-restart-button>
+<button *ngIf="showDoubleJeopardyButton()" (click)="startDoubleJeopardy()">
+  double jeopardy
+</button>
+<button *ngIf="!showDoubleJeopardyButton()" routerLink="/end-screen">
+  finish
+</button>
+<div class="playerButtons">
+  <button (click)="playerService.addPlayer()" id="btnAddPlayer">
+    <fa-icon [icon]="faUserPlus"></fa-icon>
   </button>
-  <button *ngIf="!showDoubleJeopardyButton()" routerLink="/end-screen">
-    finish
-  </button>
-  <div class="playerButtons">
-    <button (click)="playerService.addPlayer()" id="btnAddPlayer">
-      <fa-icon [icon]="faUserPlus"></fa-icon>
-    </button>
-    <label for="btnAddPlayer" class="screen-reader-only">add player</label>
-    <button
-      *ngIf="playerService.players.length > 1"
-      (click)="playerService.removePlayer()"
-      id="btnRemovePlayer"
-    >
-      <fa-icon [icon]="faUserMinus"></fa-icon>
-    </button>
-    <label for="btnRemovePlayer" class="screen-reader-only"
-      >remove player</label
-    >
-  </div>
-  <div
-    class="players"
-    [ngClass]="{
-      playersHorizontal: playerService.players.length < 4,
-      playersVertical: playerService.players.length >= 4
-    }"
+  <label for="btnAddPlayer" class="screen-reader-only">add player</label>
+  <button
+    *ngIf="playerService.players.length > 1"
+    (click)="playerService.removePlayer()"
+    id="btnRemovePlayer"
   >
-    <app-player
-      *ngFor="let player of playerService.players"
-      [player]="player"
-    ></app-player>
-  </div>
+    <fa-icon [icon]="faUserMinus"></fa-icon>
+  </button>
+  <label for="btnRemovePlayer" class="screen-reader-only">remove player</label>
+</div>
+<div
+  class="players"
+  [ngClass]="{
+    playersHorizontal: playerService.players.length < 4,
+    playersVertical: playerService.players.length >= 4
+  }"
+>
+  <app-player
+    *ngFor="let player of playerService.players"
+    [player]="player"
+  ></app-player>
 </div>
