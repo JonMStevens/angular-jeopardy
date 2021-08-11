@@ -17,13 +17,13 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {}
   navToGame(): void {
-    this.gameStateService.inGameMode = true;
+    this.gameStateService.inCoryatMode = false;
     this.gameStateService.reset();
     this.playerService.reset();
     this.router.navigate(['/game']);
   }
   navToCoryat(): void {
-    this.gameStateService.inGameMode = false;
+    this.gameStateService.inCoryatMode = true;
     this.gameStateService.reset();
     this.playerService.reset();
     this.router.navigate(['/coryat']);
