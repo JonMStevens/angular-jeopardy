@@ -57,7 +57,8 @@ li {
   background-color: #ebebeb;
   position: relative;
   height: 3.5rem;
-  line-height: 3.5rem;
+  display: flex;
+  align-items: center;
 }
 
 li:not(:last-of-type) {
@@ -99,6 +100,7 @@ li > p {
 
 .name {
   left: 1.25rem;
+  white-space: nowrap;
 }
 .score {
   right: 0.5rem;
