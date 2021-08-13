@@ -1,2 +1,9 @@
-<app-category></app-category>
-<app-board-footer></app-board-footer>
+<div *ngIf="showBoard()">
+  <app-category></app-category>
+</div>
+<div *ngIf="showBoard()">
+  <app-board-footer></app-board-footer>
+</div>
+<div *ngIf="!showBoard()">
+  <app-coryat-scorer></app-coryat-scorer>
+</div>
