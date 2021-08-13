@@ -16,4 +16,6 @@ export class CoryatBoardComponent implements OnInit {
       this.router.navigate(['/menu']);
     }
   }
+
+  showBoard = (): boolean => this.gameState.currentClue == null;
 }
