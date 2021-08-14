@@ -90,3 +90,9 @@ button {
 .modal-body > button {
   flex: 1;
 }
+
+@supports (--custom: property) {
+  .modal-content {
+    border: var(--standard-border);
+  }
+}
