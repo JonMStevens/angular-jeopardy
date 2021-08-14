@@ -1,5 +1,5 @@
 <app-restart-button></app-restart-button>
-<button *ngIf="showDoubleJeopardyButton()" (click)="startDoubleJeopardy()">
+<button *ngIf="showDoubleJeopardyButton()" (click)="showDoubleJeopardyAlert()">
   double jeopardy
 </button>
 <button *ngIf="!showDoubleJeopardyButton()" routerLink="/end-screen">
@@ -30,4 +30,26 @@
     *ngFor="let player of playerService.players"
     [player]="player"
   ></app-player>
+</div>
+<div *ngIf="showingDoubleJeopardyAlert" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1>double jeopardy?</h1>
+      <p>Are we ready to proceed to the double jeopardy round?</p>
+    </div>
+    <div class="modal-body">
+      <button
+        class="double-jeopardy-button-no"
+        (click)="hideDoubleJeopardyAlert()"
+      >
+        no
+      </button>
+      <button
+        class="double-jeopardy-button-yes"
+        (click)="startDoubleJeopardy()"
+      >
+        yes
+      </button>
+    </div>
+  </div>
 </div>
