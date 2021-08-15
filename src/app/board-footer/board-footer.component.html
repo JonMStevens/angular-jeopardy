@@ -22,8 +22,8 @@
 <div
   class="players"
   [ngClass]="{
-    playersHorizontal: playerService.players.length < 4,
-    playersVertical: playerService.players.length >= 4
+    playersVertical: arrangePlayersVertically(),
+    playersHorizontal: !arrangePlayersVertically()
   }"
 >
   <app-player

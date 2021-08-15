@@ -7,7 +7,7 @@
     <app-category></app-category>
     <app-category></app-category>
   </div>
-  <app-board-footer></app-board-footer>
+  <app-board-footer [isHorizontal]="true"></app-board-footer>
 </div>
 <div [ngStyle]="{ display: !showBoard() ? 'inline-block' : 'none' }">
   <app-question-screen></app-question-screen>
