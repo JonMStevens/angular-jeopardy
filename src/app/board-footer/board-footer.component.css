@@ -89,3 +89,26 @@ button {
     border: var(--standard-border);
   }
 }
+
+/* vertical styles */
+:host.vertical {
+  grid-template-rows: 1fr 1fr 1fr 6fr;
+  grid-template-columns: 1fr;
+}
+
+:host.vertical .playerButtons {
+  display: flex;
+  gap: 1em;
+}
+
+:host.vertical .playerButtons > button:not(:first-of-type) {
+  margin-top: 0;
+}
+
+:host.vertical .playerButtons > button {
+  max-height: max-content;
+}
+
+:host.vertical > *:not(.modal) {
+  padding: 1em 0 1em 0;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { faUserPlus, faUserMinus } from '@fortawesome/free-solid-svg-icons';
 import { GameStateService } from '../game-state.service';
 import { PlayerService } from '../player.service';
@@ -12,12 +12,16 @@ export class BoardFooterComponent implements OnInit {
   faUserPlus = faUserPlus;
   faUserMinus = faUserMinus;
   showingDoubleJeopardyAlert = false;
+  @Input() isHorizontal: boolean | undefined = undefined;
+  @HostBinding('class.vertical') applyVerticalClass = false;
+
   constructor(
     private gameState: GameStateService,
     public playerService: PlayerService
   ) {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.applyVerticalClass = this.isHorizontal === false;
+  }
   showDoubleJeopardyButton = (): boolean => this.gameState.round == 1;
   startDoubleJeopardy(): void {
     this.hideDoubleJeopardyAlert();
@@ -29,5 +33,10 @@ export class BoardFooterComponent implements OnInit {
   }
   hideDoubleJeopardyAlert(): void {
     this.showingDoubleJeopardyAlert = false;
+  }
+
+  arrangePlayersVertically(): boolean {
+    if (!this.isHorizontal) return true;
+    return this.playerService.players.length >= 4;
   }
 }
