@@ -37,13 +37,6 @@
   margin-top: 5px;
 }
 
-.playerButtons > button {
-  max-height: calc(50% - 2.5px);
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-}
 .playerButtons fa-icon {
   font-size: 1.35rem;
 }

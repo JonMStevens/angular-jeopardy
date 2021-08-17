@@ -4,14 +4,20 @@
   --jeopardy-background-blue: #100f27;
   --jeopardy-font-yellow: #eebe74;
   --error-red: #7c060b;
+  --button-background: #3e68ff;
+  --button-background-hover: #0037fe;
+  --button-background-focus: #0029be;
+  --button-color: white;
 }
 
 * {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  text-transform: uppercase;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
 body {
@@ -30,21 +36,64 @@ body {
   height: 1px;
   overflow: hidden;
 }
+
+/* partially stolen from https://moderncss.dev/css-button-styling-guide/ */
 button {
-  background-color: white;
-  border: 1px solid black;
-  color: black;
-  font-family: 'Roboto', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  padding: 0.25em 0.75em;
+  min-width: 10ch;
+  min-height: 44px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+
+  background-color: #3e68ff;
+  color: white;
+
+  font-family: inherit;
   font-size: 1.5rem;
-  padding: 10px;
-  transition: 0.1s all linear;
+  text-align: center;
+  line-height: 1.1;
+  cursor: pointer;
+  transition: 220ms background ease-in-out;
 }
 
-button:hover {
-  background-color: #ebebeb;
+button:hover,
+button:active {
+  background-color: #0037fe;
+}
+button:focus {
+  outline-style: solid;
+  outline-color: transparent;
+  box-shadow: 0 0 0 4px #0029be;
 }
 
 input[type='text'] {
   border: 1px solid black;
 }
 
+a {
+  color: #3e68ff;
+}
+
+@supports (--custom: property) {
+  button {
+    background-color: var(--button-background);
+    color: var(--button-color);
+  }
+
+  button:hover,
+  button:active {
+    background-color: var(--button-background-hover);
+  }
+
+  button:focus {
+    box-shadow: 0 0 0 4px var(--button-background-focus);
+  }
+
+  a {
+    color: var(--button-background);
+  }
+}
