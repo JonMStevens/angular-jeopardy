@@ -1,4 +1,16 @@
 div {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-flow: column;
+}
+
+.div-main-screen {
+  overflow: auto;
+}
+.div-main-screen > :not(.btn-screen-change) {
+  flex: 9;
+}
+.btn-screen-change {
+  flex: 1;
 }
