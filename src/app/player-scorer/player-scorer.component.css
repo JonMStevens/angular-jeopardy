@@ -19,7 +19,8 @@ input:not(:last-of-type) {
 }
 
 input:before {
-  transition: 0.1s all linear;
+  transition: 220ms color ease-in-out, 220ms background ease-in-out,
+    220ms border ease-in-out;
   border: 2px solid #999;
   font-size: 2rem;
   display: inline-block;
@@ -37,12 +38,12 @@ input:not(:checked):before {
 
 #rulingCorrect:hover::before {
   color: #0b7c06;
-  border-color: #0b7c06;
+  border-color: currentColor;
 }
 
 #rulingCorrect:checked::before {
   color: #0b7c06;
-  border-color: #0b7c06;
+  border-color: currentColor;
   background-color: #0b7c0636;
 }
 
@@ -51,12 +52,12 @@ input:not(:checked):before {
 }
 #rulingNoResponse:hover::before {
   color: #000;
-  border-color: #000;
+  border-color: currentColor;
 }
 
 #rulingNoResponse:checked::before {
   color: #000;
-  border-color: #000;
+  border-color: currentColor;
   background-color: #ebebeb;
 }
 
@@ -65,11 +66,11 @@ input:not(:checked):before {
 }
 #rulingIncorrect:hover::before {
   color: #7c060b;
-  border-color: #7c060b;
+  border-color: currentColor;
 }
 
 #rulingIncorrect:checked::before {
   color: #7c060b;
-  border-color: #7c060b;
+  border-color: currentColor;
   background-color: #7c060b36;
 }
