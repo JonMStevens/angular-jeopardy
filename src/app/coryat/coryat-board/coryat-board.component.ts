@@ -8,21 +8,18 @@ import { GameStateService } from 'src/app/game-state.service';
   styleUrls: ['./coryat-board.component.css']
 })
 export class CoryatBoardComponent implements OnInit {
+  showingBoard = true;
   constructor(private gameState: GameStateService, private router: Router) {}
 
-  ngOnInit(): void {
-    document.body.style.overflowY = 'hidden';
-  }
-  ngOnDestroy(): void {
-    document.body.style.overflowY = 'unset';
-  }
-  showBoard = (): boolean => this.gameState.currentClue == null;
-  screenScroll(id: string): void {
-    if (!id) return;
+  ngOnInit(): void {}
 
-    const element = document.querySelector('#' + id);
-    if (!element) return;
-
-    element.scrollIntoView({ behavior: 'smooth' });
+  showQuestionScreen = (): boolean => this.gameState.currentClue != null;
+  showBoard = (): boolean => !this.showQuestionScreen() && this.showingBoard;
+  showSetup = (): boolean => !this.showQuestionScreen() && !this.showingBoard;
+  goToSetup(): void {
+    this.showingBoard = false;
+  }
+  goToBoard(): void {
+    this.showingBoard = true;
   }
 }
