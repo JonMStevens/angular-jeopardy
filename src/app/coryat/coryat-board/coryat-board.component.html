@@ -1,9 +1,15 @@
-<div *ngIf="showBoard()">
-  <app-category></app-category>
-</div>
-<div *ngIf="showBoard()">
+<div *ngIf="showBoard()" id="setup" class="div-main-screen">
+  <button class="btn-screen-change" (click)="screenScroll('board')">
+    to board
+  </button>
   <app-board-footer [isHorizontal]="false"></app-board-footer>
 </div>
-<div *ngIf="!showBoard()">
+<div *ngIf="showBoard()" id="board" class="div-main-screen">
+  <app-category></app-category>
+  <button class="btn-screen-change" (click)="screenScroll('setup')">
+    to setup
+  </button>
+</div>
+<div *ngIf="!showBoard()" id="scorer">
   <app-coryat-scorer></app-coryat-scorer>
 </div>
