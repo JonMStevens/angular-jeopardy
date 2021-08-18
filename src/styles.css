@@ -4,6 +4,7 @@
   --jeopardy-background-blue: #100f27;
   --jeopardy-font-yellow: #eebe74;
   --error-red: #7c060b;
+  --standard-border: 1px solid black;
   --button-background: #3e68ff;
   --button-background-hover: #0037fe;
   --button-background-focus: #0029be;
@@ -71,4 +72,10 @@ button:focus {
 
 input[type='text'] {
   border: 1px solid black;
+}
+@supports (--custom: property) {
+  input[type='text'],
+  button {
+    border: var(--standard-border);
+  }
 }
