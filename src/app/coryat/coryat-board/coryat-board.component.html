@@ -1,14 +1,16 @@
 <div *ngIf="showSetup()" id="setup" class="div-main-screen">
-  <button class="btn-screen-change" (click)="goToBoard()">
+  <button class="btn-screen-change" id="btnToBoard" (click)="goToBoard()">
     <fa-icon [icon]="faBorderAll"></fa-icon>
   </button>
+  <label for="btnToBoard" class="screen-reader-only">Go to board view</label>
   <app-board-footer [isHorizontal]="false"></app-board-footer>
 </div>
 <div *ngIf="showBoard()" id="board" class="div-main-screen">
   <app-category></app-category>
-  <button class="btn-screen-change" (click)="goToSetup()">
+  <button class="btn-screen-change" id="btnToSetup" (click)="goToSetup()">
     <fa-icon [icon]="faUsersCog"></fa-icon>
   </button>
+  <label for="btnToSetup" class="screen-reader-only">Go to setup view</label>
 </div>
 <div *ngIf="showQuestionScreen()" id="scorer">
   <app-coryat-scorer></app-coryat-scorer>
