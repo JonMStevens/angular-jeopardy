@@ -1,36 +1,34 @@
-.footer {
+:host {
   display: grid;
   grid-template-rows: 100%;
   grid-template-columns: 1fr 1fr 1fr 4fr;
   grid-gap: 10px;
   margin: 10px 0 0 0;
   text-align: center;
+  height: 100%;
+  width: 100%;
 }
-.footer button {
+button {
   width: 100%;
 }
 
 .players {
   display: flex;
 }
+
+.players > * {
+  flex: 1;
+}
 .playersHorizontal {
   flex-direction: row;
-  flex-wrap: wrap;
 }
 
 .playersHorizontal > * {
-  width: 32%;
   margin-right: 5px;
 }
 
 .playersVertical {
   flex-direction: column;
-  flex-wrap: nowrap;
-}
-
-.players > * {
-  margin-bottom: 5px;
-  min-width: 30%;
 }
 
 .playerButtons > button:not(:first-of-type) {
