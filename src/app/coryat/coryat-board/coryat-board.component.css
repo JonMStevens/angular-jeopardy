@@ -6,11 +6,51 @@ div {
 }
 
 .div-main-screen {
-  overflow: auto;
+  position: relative;
 }
 .div-main-screen > :not(.btn-screen-change) {
-  flex: 9;
+  flex: 1;
 }
 .btn-screen-change {
-  flex: 1;
+  position: fixed;
+  top: 4rem;
+  left: 4rem;
+  font-size: 3rem;
+  min-height: 8rem;
+  min-width: 8rem;
+  border-radius: 50%;
+}
+
+#setup .btn-screen-change {
+  background-color: #eebe74;
+  color: black;
+}
+
+#setup .btn-screen-change:hover,
+#setup .btn-screen-change:active {
+  background-color: hsl(36, 88%, 49%);
+}
+#setup .btn-screen-change:focus {
+  box-shadow: 0 0 0 0.5rem black;
+}
+#board .btn-screen-change {
+  background-color: #ebebeb;
+  color: black;
+}
+#board .btn-screen-change:hover,
+#board .btn-screen-change:active {
+  background-color: hsl(0, 0%, 82%);
+}
+
+#board .btn-screen-change:focus {
+  box-shadow: 0 0 0 0.5rem #3e68ff;
+}
+
+@supports (--custom: property) {
+  #setup .btn-screen-change {
+    background-color: var(--jeopardy-font-yellow);
+  }
+  #board .btn-screen-change:focus {
+    box-shadow: 0 0 0 0.5rem var(--button-background);
+  }
 }

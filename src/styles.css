@@ -73,6 +73,10 @@ button:focus {
 input[type='text'] {
   border: 1px solid black;
 }
+
+fa-icon {
+  font-size: inherit;
+}
 @supports (--custom: property) {
   input[type='text'] {
     border: var(--standard-border);

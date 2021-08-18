@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { faBorderAll, faUsersCog } from '@fortawesome/free-solid-svg-icons';
 import { GameStateService } from 'src/app/game-state.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { GameStateService } from 'src/app/game-state.service';
 })
 export class CoryatBoardComponent implements OnInit {
   showingBoard = true;
+  faBorderAll = faBorderAll;
+  faUsersCog = faUsersCog;
   constructor(private gameState: GameStateService, private router: Router) {}
 
   ngOnInit(): void {}
