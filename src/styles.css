@@ -38,7 +38,8 @@ body {
 }
 
 /* partially stolen from https://moderncss.dev/css-button-styling-guide/ */
-button {
+button,
+a.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -56,15 +57,19 @@ button {
   font-size: 1.5rem;
   text-align: center;
   line-height: 1.1;
+  text-decoration: none;
   cursor: pointer;
   transition: 220ms background ease-in-out;
 }
 
 button:hover,
-button:active {
+button:active,
+a.button:hover,
+a.button:active {
   background-color: #0037fe;
 }
-button:focus {
+button:focus,
+a.button:focus {
   outline-style: solid;
   outline-color: transparent;
   box-shadow: 0 0 0 4px #0029be;

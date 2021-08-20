@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { GameStateService } from '../game-state.service';
 import { PlayerService } from '../player.service';
 
@@ -10,22 +9,20 @@ import { PlayerService } from '../player.service';
 })
 export class MenuComponent implements OnInit {
   constructor(
-    private router: Router,
     private playerService: PlayerService,
     private gameStateService: GameStateService
   ) {}
 
   ngOnInit(): void {}
   navToGame(): void {
-    this.gameStateService.inCoryatMode = false;
-    this.gameStateService.reset();
-    this.playerService.reset();
-    this.router.navigate(['/game']);
+    this.changeMode(false);
   }
   navToCoryat(): void {
-    this.gameStateService.inCoryatMode = true;
+    this.changeMode(true);
+  }
+  changeMode(inCoryatMode: boolean): void {
+    this.gameStateService.inCoryatMode = inCoryatMode;
     this.gameStateService.reset();
     this.playerService.reset();
-    this.router.navigate(['/coryat']);
   }
 }

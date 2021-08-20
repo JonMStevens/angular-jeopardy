@@ -6,6 +6,8 @@
     are selected by retrieving random categories from
     <a href="https://jservice.io/">jservice.io</a>
   </p>
-  <button (click)="navToGame()">game</button>
-  <button (click)="navToCoryat()">coryat score counter</button>
+  <a routerLink="/game" class="button" (click)="navToGame()">game</a>
+  <a routerLink="/coryat" class="button" (click)="navToCoryat()"
+    >coryat score counter</a
+  >
 </div>
