@@ -27,7 +27,8 @@ button {
   margin-right: 5px;
 }
 
-.playersVertical {
+.playersVertical,
+:host-context(app-coryat-board) .players {
   flex-direction: column;
 }
 
@@ -91,24 +92,27 @@ button {
 }
 
 /* vertical styles */
-:host.vertical {
+:host-context(app-coryat-board) :host {
   grid-template-rows: 1fr 1fr 1fr 6fr;
   grid-template-columns: 1fr;
 }
 
-:host.vertical .playerButtons {
+:host-context(app-coryat-board) :host .playerButtons {
   display: flex;
   gap: 1em;
 }
 
-:host.vertical .playerButtons > button:not(:first-of-type) {
+:host-context(app-coryat-board)
+  :host
+  .playerButtons
+  > button:not(:first-of-type) {
   margin-top: 0;
 }
 
-:host.vertical .playerButtons > button {
+:host-context(app-coryat-board) :host .playerButtons > button {
   max-height: max-content;
 }
 
-:host.vertical > *:not(.modal) {
+:host-context(app-coryat-board) :host > *:not(.modal) {
   padding: 1em 0 1em 0;
 }
