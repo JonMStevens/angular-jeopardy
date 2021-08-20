@@ -7,9 +7,17 @@ div > *:not(:first-child) {
 }
 
 input {
-  width:100%;
+  width: 100%;
   text-align: center;
 }
 p {
   text-align: center;
+  font-size: 1.5rem;
+}
+:host-context(app-coryat-board) input {
+  font-size: 2rem;
+}
+
+:host-context(app-coryat-board) p {
+  font-size: 3rem;
 }
