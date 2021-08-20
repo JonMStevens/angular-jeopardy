@@ -1,12 +1,15 @@
-div {
-  width: 100vw;
-  height: 100vh;
+:host > div {
   display: flex;
   flex-flow: column;
+  width: 100vw;
+  height: 100vh;
 }
-
 .div-main-screen {
   position: relative;
+  padding: 2rem;
+}
+app-coryat-scorer {
+  padding: 2rem;
 }
 .div-main-screen > :not(.btn-screen-change) {
   flex: 1;
