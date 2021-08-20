@@ -1,9 +1,5 @@
 div {
-  padding: 10px;
-}
-
-div > *:not(:first-child) {
-  margin-top: 10px;
+  padding: 0 1rem 1rem 1rem;
 }
 
 input {
@@ -12,6 +8,7 @@ input {
 }
 p {
   text-align: center;
+  margin-top: 10px;
   font-size: 1.5rem;
 }
 :host-context(app-coryat-board) input {
