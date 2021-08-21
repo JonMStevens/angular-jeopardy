@@ -84,7 +84,7 @@ export class CategoryGetterService {
   constructor(private http: HttpClient, private gameState: GameStateService) {}
 
   public getCategory$(): Observable<Category> {
-    if (this.gameState.inCoryatMode) {
+    if (this.gameState.isInCoryatMode()) {
       return this.getCoryatCategory$();
     }
     /* for testing so I do not send pointless requests to the actual server */

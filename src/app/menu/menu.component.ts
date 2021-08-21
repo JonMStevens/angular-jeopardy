@@ -21,7 +21,11 @@ export class MenuComponent implements OnInit {
     this.changeMode(true);
   }
   changeMode(inCoryatMode: boolean): void {
-    this.gameStateService.inCoryatMode = inCoryatMode;
+    if (inCoryatMode) {
+      this.gameStateService.setToCoryatMode();
+    } else {
+      this.gameStateService.setToGameMode();
+    }
     this.gameStateService.reset();
     this.playerService.reset();
   }

@@ -15,7 +15,7 @@ export class CoryatModeGuard implements CanActivate {
     | boolean
     | UrlTree {
     /* if in game mode return true */
-    if (this.gameState.inCoryatMode) {
+    if (this.gameState.isInCoryatMode()) {
       return true;
     }
 

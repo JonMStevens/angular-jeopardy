@@ -15,7 +15,7 @@ export class GameModeGuard implements CanActivate {
     | boolean
     | UrlTree {
     /* if in game mode return true */
-    if (!this.gameState.inCoryatMode) {
+    if (this.gameState.isInGameMode()) {
       return true;
     }
 

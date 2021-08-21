@@ -2,16 +2,28 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Clue } from './clue';
 
+enum Mode {
+  UNSET = 0,
+  CORYAT_MODE = 1,
+  GAME_MODE = 2
+}
 @Injectable({
   providedIn: 'root'
 })
 export class GameStateService {
-  private _inCoryatMode = true;
-  public get inCoryatMode(): boolean {
-    return this._inCoryatMode;
+  private _inCoryatMode: Mode = 0;
+
+  public isInCoryatMode(): boolean {
+    return this._inCoryatMode === Mode.CORYAT_MODE;
   }
-  public set inCoryatMode(value: boolean) {
-    this._inCoryatMode = value;
+  public isInGameMode(): boolean {
+    return this._inCoryatMode === Mode.GAME_MODE;
+  }
+  setToCoryatMode(): void {
+    this._inCoryatMode = Mode.CORYAT_MODE;
+  }
+  setToGameMode(): void {
+    this._inCoryatMode = Mode.GAME_MODE;
   }
 
   private _round = 1;

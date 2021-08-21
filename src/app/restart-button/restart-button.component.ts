@@ -21,7 +21,7 @@ export class RestartButtonComponent implements OnInit {
   restartGame(): void {
     this.gameState.reset();
     this.playerService.resetScores();
-    const route = this.gameState.inCoryatMode ? '/coryat' : '/game';
+    const route = this.gameState.isInCoryatMode() ? '/coryat' : '/game';
     this.router.navigate([route]);
   }
 }
