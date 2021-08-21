@@ -1,21 +1,49 @@
 :host {
-  display: grid;
-  grid-template-rows: 100%;
-  grid-template-columns: 1fr 1fr 1fr 4fr;
-  grid-gap: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
   margin: 10px 0 0 0;
-  height: 100%;
-  width: 100%;
-}
-button {
-  width: 100%;
 }
 
-.players {
+:host-context(app-coryat-board) :host {
+  flex-direction: column;
+}
+
+/* setup buttons */
+#setupButtons {
+  flex: 0 0 3rem;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+#setupButtons > * {
+  flex: 1;
+}
+
+:host-context(app-coryat-board) #setupButtons {
+  flex: 0 0 300px;
+  flex-direction: column;
+}
+
+.playerButtons {
+  display: flex;
+  gap: 1rem;
+}
+.playerButtons > button {
+  flex: 1;
+}
+
+.playerButtons fa-icon {
+  font-size: 1.35rem;
+}
+
+/* players */
+#players {
+  flex: 2;
   display: flex;
 }
 
-.players > * {
+#players > * {
   flex: 1;
 }
 .playersHorizontal {
@@ -27,16 +55,8 @@ button {
 }
 
 .playersVertical,
-:host-context(app-coryat-board) .players {
+:host-context(app-coryat-board) #players {
   flex-direction: column;
-}
-
-.playerButtons > button:not(:first-of-type) {
-  margin-top: 5px;
-}
-
-.playerButtons fa-icon {
-  font-size: 1.35rem;
 }
 
 .modal {
@@ -91,10 +111,6 @@ button {
 }
 
 /* vertical styles */
-:host-context(app-coryat-board) :host {
-  grid-template-rows: 1fr 1fr 1fr 6fr;
-  grid-template-columns: 1fr;
-}
 
 :host-context(app-coryat-board) :host .playerButtons {
   display: flex;

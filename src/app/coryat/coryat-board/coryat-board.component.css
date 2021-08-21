@@ -1,6 +1,4 @@
 :host > div {
-  display: flex;
-  flex-flow: column;
   width: 100vw;
   height: 100vh;
 }
@@ -10,9 +8,6 @@
 }
 app-coryat-scorer {
   padding: 2rem;
-}
-.div-main-screen > :not(.btn-screen-change) {
-  flex: 1;
 }
 .btn-screen-change {
   position: fixed;
