@@ -38,25 +38,11 @@
     [player]="player"
   ></app-player>
 </div>
-<div *ngIf="showingDoubleJeopardyAlert" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h1>double jeopardy?</h1>
-      <p>Are we ready to proceed to the double jeopardy round?</p>
-    </div>
-    <div class="modal-body">
-      <button
-        class="double-jeopardy-button-no"
-        (click)="hideDoubleJeopardyAlert()"
-      >
-        no
-      </button>
-      <button
-        class="double-jeopardy-button-yes"
-        (click)="startDoubleJeopardy()"
-      >
-        yes
-      </button>
-    </div>
-  </div>
+<div *ngIf="showingDoubleJeopardyAlert">
+  <app-modal
+    [title]="'double jeopardy?'"
+    [description]="'Are we ready to proceed to the double jeopardy round?'"
+    (noClicked)="hideDoubleJeopardyAlert()"
+    (yesClicked)="startDoubleJeopardy()"
+  ></app-modal>
 </div>

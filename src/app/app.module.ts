@@ -19,6 +19,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CoryatBoardComponent } from './coryat/coryat-board/coryat-board.component';
 import { BoardFooterComponent } from './board-footer/board-footer.component';
 import { CoryatScorerComponent } from './coryat/coryat-scorer/coryat-scorer.component';
+import { ModalComponent } from './modal/modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { CoryatScorerComponent } from './coryat/coryat-scorer/coryat-scorer.comp
     PlayerScorerComponent,
     CoryatBoardComponent,
     BoardFooterComponent,
-    CoryatScorerComponent
+    CoryatScorerComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
