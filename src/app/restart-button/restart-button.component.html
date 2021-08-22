@@ -1,3 +1,13 @@
-<button id="btnRestart" (click)="restartGame()">
+<button id="btnRestart" (click)="showRestartModal()">
   <fa-icon [icon]="faUndo"></fa-icon>restart
 </button>
+<div *ngIf="showingRestartJeopardyAlert">
+  <app-modal
+    [title]="'restart jeopardy?'"
+    [description]="
+      'Should we restart? Clicking yes will erase your scores and begin a new game with new questions.'
+    "
+    (noClicked)="hideRestartJeopardyAlert()"
+    (yesClicked)="restartGame()"
+  ></app-modal>
+</div>
