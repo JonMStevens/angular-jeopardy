@@ -5,9 +5,9 @@
   --jeopardy-font-yellow: #eebe74;
   --error-red: #7c060b;
   --standard-border: 1px solid black;
-  --button-background: #3e68ff;
-  --button-background-hover: #0037fe;
-  --button-background-focus: #0029be;
+  --button-background: #0a14c9;
+  --button-background-hover: #1a1c4a;
+  --button-background-focus: #04074a;
   --button-color: white;
 }
 
@@ -50,7 +50,7 @@ a.button {
   min-height: 44px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
 
-  background-color: #3e68ff;
+  background-color: #0a14c9;
   color: white;
 
   font-family: inherit;
@@ -66,13 +66,13 @@ button:hover,
 button:active,
 a.button:hover,
 a.button:active {
-  background-color: #0037fe;
+  background-color: #1a1c4a;
 }
 button:focus,
 a.button:focus {
   outline-style: solid;
   outline-color: transparent;
-  box-shadow: 0 0 0 4px #0029be;
+  box-shadow: 0 0 0 4px #04074a;
 }
 
 input[type='text'] {
@@ -85,5 +85,22 @@ fa-icon {
 @supports (--custom: property) {
   input[type='text'] {
     border: var(--standard-border);
+  }
+
+  button,
+  a.button {
+    background-color: var(--button-background);
+    color: var(--button-color);
+  }
+
+  button:hover,
+  button:active,
+  a.button:hover,
+  a.button:active {
+    background-color: var(--button-background-hover);
+  }
+  button:focus,
+  a.button:focus {
+    box-shadow: 0 0 0 4px var(--button-background-focus);
   }
 }
