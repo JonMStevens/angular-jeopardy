@@ -5,7 +5,9 @@ button {
   background-color: #060b7c;
   border-radius: 0;
 }
-
+button:focus {
+  box-shadow: inset 0 0 0 4px white;
+}
 :host.errorClue button {
   background-color: #7c060b;
 }
