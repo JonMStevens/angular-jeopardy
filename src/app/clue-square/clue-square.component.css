@@ -11,7 +11,7 @@ button {
 }
 
 button:not(.clueComplete):hover {
-  background-color: #100f27;
+  background-color: #0e0f26;
 }
 button > span {
   font-family: 'Yantramanav', sans-serif;

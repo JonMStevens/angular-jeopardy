@@ -18,8 +18,8 @@ div > div {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 0px;
-  background-color: #100f27;
-  border: 1px solid #100f27;
+  background-color: #0e0f26;
+  border: 1px solid #0e0f26;
 }
 
 app-board-footer {

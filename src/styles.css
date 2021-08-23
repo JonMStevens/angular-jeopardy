@@ -1,12 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
   --jeopardy-foreground-blue: #060b7c;
-  --jeopardy-background-blue: #100f27;
+  --jeopardy-background-blue: #0e0f26;
   --jeopardy-font-yellow: #eebe74;
   --error-red: #7c060b;
   --standard-border: 1px solid black;
   --button-background: #0a14c9;
-  --button-background-hover: #1a1c4a;
+  --button-background-hover: #191c49;
   --button-background-focus: #04074a;
   --button-color: white;
 }
@@ -66,7 +66,7 @@ button:hover,
 button:active,
 a.button:hover,
 a.button:active {
-  background-color: #1a1c4a;
+  background-color: #191c49;
 }
 button:focus,
 a.button:focus {
