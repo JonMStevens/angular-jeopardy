@@ -3,10 +3,15 @@
   width: 100vw;
   display: flex;
   flex-flow: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
 }
 app-player-scorer {
   flex: 1;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  margin-top: 1rem;
 }

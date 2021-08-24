@@ -25,7 +25,9 @@ input:before {
     100ms border ease-in-out;
   border: 2px solid #999;
   font-size: 2rem;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -87,4 +89,15 @@ input:hover::before {
 #rulingIncorrect:checked::before {
   color: #7c060b;
   background-color: #7c060b36;
+}
+
+:host-context(app-coryat-scorer) p {
+  font-size: 2rem;
+}
+:host-context(app-coryat-scorer) input {
+  height: 4rem;
+  width: 4rem;
+}
+:host-context(app-coryat-scorer) input::before {
+  font-size: 4rem;
 }
