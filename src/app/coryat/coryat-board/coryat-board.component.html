@@ -1,5 +1,5 @@
 <div *ngIf="showSetup()" id="setup" class="div-main-screen">
-  <button class="btn-screen-change" id="btnToBoard" (click)="goToBoard()">
+  <button class="dot-button" id="btnToBoard" (click)="goToBoard()">
     <fa-icon [icon]="faBorderAll"></fa-icon>
   </button>
   <label for="btnToBoard" class="screen-reader-only">Go to board view</label>
@@ -7,7 +7,7 @@
 </div>
 <div *ngIf="showBoard()" id="board" class="div-main-screen">
   <app-category></app-category>
-  <button class="btn-screen-change" id="btnToSetup" (click)="goToSetup()">
+  <button class="dot-button" id="btnToSetup" (click)="goToSetup()">
     <fa-icon [icon]="faUsersCog"></fa-icon>
   </button>
   <label for="btnToSetup" class="screen-reader-only">Go to setup view</label>

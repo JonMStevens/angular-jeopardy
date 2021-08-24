@@ -9,37 +9,34 @@
 app-coryat-scorer {
   padding: 2rem;
 }
-.btn-screen-change {
+
+.dot-button {
   position: fixed;
-  top: 4rem;
-  left: 4rem;
-  font-size: 3rem;
-  min-height: 8rem;
-  min-width: 8rem;
-  border-radius: 50%;
+  bottom: 1.5rem;
+  right: 1.5rem;
 }
 
-#setup .btn-screen-change {
-  background-color: var(--jeopardy-font-yellow);
+#setup .dot-button {
   color: black;
+  background-color: #d58001;
 }
 
-#setup .btn-screen-change:hover,
-#setup .btn-screen-change:active {
-  background-color: hsl(36, 88%, 49%);
+#setup .dot-button:hover,
+#setup .dot-button:active {
+  background-color: #d05800;
 }
-#setup .btn-screen-change:focus {
+#setup .dot-button:focus {
   box-shadow: 0 0 0 0.5rem black;
 }
-#board .btn-screen-change {
-  background-color: #ebebeb;
+#board .dot-button {
+  background-color: #b0b0b0;
   color: black;
 }
-#board .btn-screen-change:hover,
-#board .btn-screen-change:active {
-  background-color: hsl(0, 0%, 82%);
+#board .dot-button:hover,
+#board .dot-button:active {
+  background-color: hsl(0, 0%, 44.3%);
 }
 
-#board .btn-screen-change:focus {
+#board .dot-button:focus {
   box-shadow: 0 0 0 0.5rem var(--button-background);
 }
