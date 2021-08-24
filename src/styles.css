@@ -50,8 +50,8 @@ a.button {
   min-height: 44px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
 
-  background-color: #0a14c9;
-  color: white;
+  background-color: var(--button-background);
+  color: var(--button-color);
 
   font-family: inherit;
   font-size: 1.5rem;
@@ -66,41 +66,19 @@ button:hover,
 button:active,
 a.button:hover,
 a.button:active {
-  background-color: #191c49;
+  background-color: var(--button-background-hover);
 }
 button:focus,
 a.button:focus {
   outline-style: solid;
   outline-color: transparent;
-  box-shadow: 0 0 0 4px #04074a;
+  box-shadow: 0 0 0 4px var(--button-background-focus);
 }
 
 input[type='text'] {
-  border: 1px solid black;
+  border: var(--standard-border);
 }
 
 fa-icon {
   font-size: inherit;
-}
-@supports (--custom: property) {
-  input[type='text'] {
-    border: var(--standard-border);
-  }
-
-  button,
-  a.button {
-    background-color: var(--button-background);
-    color: var(--button-color);
-  }
-
-  button:hover,
-  button:active,
-  a.button:hover,
-  a.button:active {
-    background-color: var(--button-background-hover);
-  }
-  button:focus,
-  a.button:focus {
-    box-shadow: 0 0 0 4px var(--button-background-focus);
-  }
 }

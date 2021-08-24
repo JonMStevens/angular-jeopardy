@@ -6,7 +6,7 @@ app-category div {
 app-category h2 {
   display: flex;
   flex-direction: column;
-  background-color: #060b7c;
+  background-color: var(--jeopardy-foreground-blue);
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@ app-category h2 {
 }
 
 app-category .errorCategory h2 {
-  background-color: #7c060b;
+  background-color: var(--error-red);
 }
 
 app-category h2 > i {
@@ -30,17 +30,5 @@ app-category h2 > i::after {
   content: '\00a0';
 }
 app-category div > * {
-  border: 2px solid #0e0f26;
-}
-
-@supports (--custom: property) {
-  app-category h2 {
-    background-color: var(--jeopardy-foreground-blue);
-  }
-  app-category .errorCategory h2 {
-    background-color: var(--error-red);
-  }
-  app-category div > * {
-    border-color: var(--jeopardy-background-blue);
-  }
+  border: 2px solid var(--jeopardy-background-blue);
 }

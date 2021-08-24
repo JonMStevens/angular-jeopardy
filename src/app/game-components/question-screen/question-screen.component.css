@@ -6,9 +6,9 @@ app-question-screen > #answerDiv {
   text-align: center;
   height: 90%;
   width: 100%;
-  background-color: #060b7c;
+  background-color: var(--jeopardy-foreground-blue);
   color: white;
-  border: 2px solid #0e0f26;
+  border: 2px solid var(--jeopardy-background-blue);
 }
 :is(#answerDiv, #questionDiv) :is(p, p > i) {
   width: 80%;
@@ -41,12 +41,4 @@ app-question-screen > #answerDiv {
 .buttonDiv > button {
   position: relative;
   top: -5px;
-}
-
-@supports (--custom: property) {
-  app-question-screen > #questionDiv,
-  app-question-screen > #answerDiv {
-    background-color: var(--jeopardy-foreground-blue);
-    border-color: var(--jeopardy-background-blue);
-  }
 }

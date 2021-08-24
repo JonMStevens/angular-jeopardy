@@ -20,7 +20,7 @@ app-coryat-scorer {
 }
 
 #setup .btn-screen-change {
-  background-color: #eebe74;
+  background-color: var(--jeopardy-font-yellow);
   color: black;
 }
 
@@ -41,14 +41,5 @@ app-coryat-scorer {
 }
 
 #board .btn-screen-change:focus {
-  box-shadow: 0 0 0 0.5rem #3e68ff;
-}
-
-@supports (--custom: property) {
-  #setup .btn-screen-change {
-    background-color: var(--jeopardy-font-yellow);
-  }
-  #board .btn-screen-change:focus {
-    box-shadow: 0 0 0 0.5rem var(--button-background);
-  }
+  box-shadow: 0 0 0 0.5rem var(--button-background);
 }

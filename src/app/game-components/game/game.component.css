@@ -18,18 +18,11 @@ div > div {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 0px;
-  background-color: #0e0f26;
-  border: 1px solid #0e0f26;
+  background-color: var(--jeopardy-background-blue);
+  border: 1px solid var(--jeopardy-background-blue);
 }
 
 app-board-footer {
   flex: 0 0 100px;
   max-height: 100px;
-}
-
-@supports (--custom: property) {
-  .board {
-    background-color: var(--jeopardy-background-blue);
-    border-color: var(--jeopardy-background-blue);
-  }
 }
