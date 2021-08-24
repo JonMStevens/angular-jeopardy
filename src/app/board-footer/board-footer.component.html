@@ -41,7 +41,7 @@
 <div *ngIf="showingDoubleJeopardyAlert">
   <app-modal
     [title]="'double jeopardy?'"
-    [description]="'Are we ready to proceed to the double jeopardy round?'"
+    [description]="'proceed to the double jeopardy round?'"
     (noClicked)="hideDoubleJeopardyAlert()"
     (yesClicked)="startDoubleJeopardy()"
   ></app-modal>
