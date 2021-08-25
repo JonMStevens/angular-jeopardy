@@ -9,21 +9,20 @@ div > div {
   padding: 0 0 0 0;
 }
 .boardView {
-  display: grid;
-  grid-template-rows: 90% 10%;
+  display: flex;
+  flex-flow: column;
 }
 
 .board {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 0px;
-  background-color: #100f27;
-  border: 1px solid #100f27;
+  background-color: var(--jeopardy-background-blue);
+  border: 1px solid var(--jeopardy-background-blue);
 }
 
-@supports (--custom: property) {
-  .board {
-    background-color: var(--jeopardy-background-blue);
-    border-color: var(--jeopardy-background-blue);
-  }
+app-board-footer {
+  flex: 0 0 100px;
+  max-height: 100px;
 }

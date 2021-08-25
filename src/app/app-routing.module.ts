@@ -5,13 +5,24 @@ import { EndScreenComponent } from './end-screen/end-screen.component';
 import { GameComponent } from './game-components/game/game.component';
 import { MenuComponent } from './menu/menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
+import { GameModeGuard } from './guards/game-mode.guard';
+import { CoryatModeGuard } from './guards/coryat-mode.guard';
+import { CoryatInfoComponent } from './coryat/coryat-info/coryat-info.component';
 const routes: Routes = [
-  { path: 'game', component: GameComponent },
+  {
+    path: 'game',
+    component: GameComponent,
+    canActivate: [GameModeGuard]
+  },
   { path: '', redirectTo: '/menu', pathMatch: 'full' },
   { path: 'menu', component: MenuComponent },
   { path: 'end-screen', component: EndScreenComponent },
-  { path: 'coryat', component: CoryatBoardComponent },
+  {
+    path: 'coryat',
+    component: CoryatBoardComponent,
+    canActivate: [CoryatModeGuard]
+  },
+  { path: 'coryat-info', component: CoryatInfoComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

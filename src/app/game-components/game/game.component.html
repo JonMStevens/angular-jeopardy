@@ -1,4 +1,4 @@
-<div class="boardView" [ngStyle]="{ display: showBoard() ? 'grid' : 'none' }">
+<div class="boardView" [ngStyle]="{ display: showBoard() ? 'flex' : 'none' }">
   <div class="board">
     <app-category></app-category>
     <app-category></app-category>
@@ -7,7 +7,7 @@
     <app-category></app-category>
     <app-category></app-category>
   </div>
-  <app-board-footer></app-board-footer>
+  <app-board-footer [isHorizontal]="true"></app-board-footer>
 </div>
 <div [ngStyle]="{ display: !showBoard() ? 'inline-block' : 'none' }">
   <app-question-screen></app-question-screen>

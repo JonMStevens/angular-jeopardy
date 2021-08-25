@@ -1,0 +1,42 @@
+:host > div {
+  width: 100vw;
+  height: 100vh;
+}
+.div-main-screen {
+  position: relative;
+  padding: 2rem;
+}
+app-coryat-scorer {
+  padding: 2rem;
+}
+
+.dot-button {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+}
+
+#setup .dot-button {
+  color: black;
+  background-color: #d58001;
+}
+
+#setup .dot-button:hover,
+#setup .dot-button:active {
+  background-color: #d05800;
+}
+#setup .dot-button:focus {
+  box-shadow: 0 0 0 0.5rem black;
+}
+#board .dot-button {
+  background-color: #b0b0b0;
+  color: black;
+}
+#board .dot-button:hover,
+#board .dot-button:active {
+  background-color: hsl(0, 0%, 44.3%);
+}
+
+#board .dot-button:focus {
+  box-shadow: 0 0 0 0.5rem var(--button-background);
+}

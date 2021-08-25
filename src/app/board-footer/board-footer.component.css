@@ -1,42 +1,165 @@
-.footer {
-  display: grid;
-  grid-template-rows: 100%;
-  grid-template-columns: 1fr 1fr 1fr 4fr;
-  grid-gap: 10px;
+:host {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
   margin: 10px 0 0 0;
-  text-align: center;
-}
-.footer button {
-  width: 100%;
 }
 
-.players {
+:host-context(app-coryat-board) :host {
+  flex-direction: column;
+}
+
+/* setup buttons */
+#setupButtons {
+  flex: 0 0 3rem;
   display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+#setupButtons > * {
+  flex: 1;
+}
+
+:host-context(app-coryat-board) #setupButtons {
+  flex: 0 0 300px;
+  flex-direction: column;
+}
+
+.playerButtons {
+  display: flex;
+  gap: 1rem;
+}
+.playerButtons > button {
+  flex: 1;
+}
+
+.playerButtons fa-icon {
+  font-size: 1.35rem;
+}
+
+/* players */
+#players {
+  flex: 2;
+  display: flex;
+  gap: 0.5rem;
+}
+
+#players > * {
+  flex: 1;
+}
+
+.players > * {
+  flex: 1;
 }
 .playersHorizontal {
   flex-direction: row;
-  flex-wrap: wrap;
 }
 
 .playersHorizontal > * {
-  width: 32%;
   margin-right: 5px;
 }
 
 .playersVertical {
   flex-direction: column;
-  flex-wrap: nowrap;
 }
 
-.players > * {
-  margin-bottom: 5px;
-  min-width: 30%;
+:host-context(app-coryat-board) #players {
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.playerButtons > button:not(:first-of-type) {
-  margin-top: 5px;
+/* vertical styles */
+
+:host-context(app-coryat-board) :host .playerButtons {
+  display: flex;
+  gap: 1em;
 }
 
-.playerButtons fa-icon {
-  font-size: 1.35rem;
+:host-context(app-coryat-board)
+  :host
+  .playerButtons
+  > button:not(:first-of-type) {
+  margin-top: 0;
+}
+
+:host-context(app-coryat-board) :host .playerButtons > button {
+  max-height: max-content;
+}
+
+:host-context(app-coryat-board) :host > *:not(.modal) {
+  padding: 1em 0 1em 0;
+}
+
+.modal {
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  padding: 2em;
+  display: flex;
+  flex-flow: row wrap;
+  background: white;
+  width: 500px;
+  max-width: 80%;
+  border: 1px solid black;
+}
+.modal-content * {
+  font-family: 'Roboto', sans-serif;
+}
+.modal-header {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+.modal-header > h1 {
+  font-weight: normal;
+  font-size: 1.8rem;
+  background: #ebebeb;
+  padding: 0.5em 0 0.5em 0;
+}
+.modal-header > *:not(:first-child) {
+  font-size: 1.2rem;
+  padding: 2em 0 2em 0;
+}
+.modal-body {
+  display: flex;
+  flex-flow: row;
+  gap: 1em;
+  width: 100%;
+}
+.modal-body > button {
+  flex: 1;
+}
+
+@supports (--custom: property) {
+  .modal-content {
+    border: var(--standard-border);
+  }
+}
+
+/* vertical styles */
+:host.vertical {
+  grid-template-rows: 1fr 1fr 1fr 6fr;
+  grid-template-columns: 1fr;
+}
+
+:host.vertical .playerButtons {
+  display: flex;
+  gap: 1em;
+}
+
+:host.vertical .playerButtons > button:not(:first-of-type) {
+  margin-top: 0;
+}
+
+:host.vertical .playerButtons > button {
+  max-height: max-content;
+}
+
+:host.vertical > *:not(.modal) {
+  padding: 1em 0 1em 0;
 }

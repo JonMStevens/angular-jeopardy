@@ -1,0 +1,6 @@
+<app-player-scorer
+  *ngFor="let player of playerService.players"
+  [player]="player"
+  (rulingChange)="onRulingChange($event, player)"
+></app-player-scorer>
+<button (click)="awardPoints()">continue</button>

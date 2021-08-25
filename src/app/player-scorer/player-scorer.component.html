@@ -6,6 +6,7 @@
       type="radio"
       name="ruling"
       id="rulingCorrect"
+      tabindex="0"
       (change)="onRulingChange(1)"
     />
     <label for="rulingCorrect" class="screen-reader-only">Correct</label>
@@ -15,6 +16,7 @@
       name="ruling"
       id="rulingNoResponse"
       checked
+      tabindex="0"
       (change)="onRulingChange(0)"
     />
     <label for="rulingNoResponse" class="screen-reader-only"
@@ -25,6 +27,7 @@
       type="radio"
       name="ruling"
       id="rulingIncorrect"
+      tabindex="0"
       (change)="onRulingChange(-1)"
     />
     <label for="rulingIncorrect" class="screen-reader-only">Incorrect</label>

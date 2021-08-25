@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GameStateService } from '../../game-state.service';
 
 @Component({
@@ -8,8 +9,6 @@ import { GameStateService } from '../../game-state.service';
 })
 export class GameComponent implements OnInit {
   ngOnInit(): void {}
-  constructor(
-    private gameState: GameStateService,
-  ) {}
+  constructor(private gameState: GameStateService, private router: Router) {}
   showBoard = (): boolean => this.gameState.currentClue == null;
 }

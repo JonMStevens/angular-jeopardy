@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +18,9 @@ import { PlayerScorerComponent } from './player-scorer/player-scorer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CoryatBoardComponent } from './coryat/coryat-board/coryat-board.component';
 import { BoardFooterComponent } from './board-footer/board-footer.component';
+import { CoryatScorerComponent } from './coryat/coryat-scorer/coryat-scorer.component';
+import { ModalComponent } from './modal/modal.component';
+import { CoryatInfoComponent } from './coryat/coryat-info/coryat-info.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,10 @@ import { BoardFooterComponent } from './board-footer/board-footer.component';
     RestartButtonComponent,
     PlayerScorerComponent,
     CoryatBoardComponent,
-    BoardFooterComponent
+    BoardFooterComponent,
+    CoryatScorerComponent,
+    ModalComponent,
+    CoryatInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +48,7 @@ import { BoardFooterComponent } from './board-footer/board-footer.component';
     FontAwesomeModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}

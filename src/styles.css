@@ -1,12 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
   --jeopardy-foreground-blue: #060b7c;
-  --jeopardy-background-blue: #100f27;
+  --jeopardy-background-blue: #0e0f26;
   --jeopardy-font-yellow: #eebe74;
   --error-red: #7c060b;
-  --button-background: #3e68ff;
-  --button-background-hover: #0037fe;
-  --button-background-focus: #0029be;
+  --standard-border: 1px solid black;
+  --button-background: #0a14c9;
+  --button-background-hover: #191c49;
+  --button-background-focus: #04074a;
   --button-color: white;
 }
 
@@ -23,7 +24,6 @@
 body {
   margin: 0;
   height: 100vh;
-  width: 100vw;
   background-color: white;
   color: black;
 }
@@ -37,8 +37,17 @@ body {
   overflow: hidden;
 }
 
+h1 {
+  font-size: 5rem;
+  padding-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
 /* partially stolen from https://moderncss.dev/css-button-styling-guide/ */
-button {
+button,
+a.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -49,51 +58,42 @@ button {
   min-height: 44px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
 
-  background-color: #3e68ff;
-  color: white;
+  background-color: var(--button-background);
+  color: var(--button-color);
 
   font-family: inherit;
   font-size: 1.5rem;
   text-align: center;
   line-height: 1.1;
+  text-decoration: none;
   cursor: pointer;
   transition: 220ms background ease-in-out;
 }
-
-button:hover,
-button:active {
-  background-color: #0037fe;
+button.dot-button {
+  min-width: 1px;
+  min-height: 1px;
+  font-size: 3rem;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
 }
-button:focus {
+button:hover,
+button:active,
+a.button:hover,
+a.button:active {
+  background-color: var(--button-background-hover);
+}
+button:focus,
+a.button:focus {
   outline-style: solid;
   outline-color: transparent;
-  box-shadow: 0 0 0 4px #0029be;
+  box-shadow: 0 0 0 4px var(--button-background-focus);
 }
 
 input[type='text'] {
-  border: 1px solid black;
+  border: var(--standard-border);
 }
 
-a {
-  color: #3e68ff;
-}
-
-@supports (--custom: property) {
-  button {
-    background-color: var(--button-background);
-    color: var(--button-color);
-  }
-
-  button:hover,
-  button:active {
-    background-color: var(--button-background-hover);
-  }
-
-  button:focus {
-    box-shadow: 0 0 0 4px var(--button-background-focus);
-  }
-
-  a {
-    color: var(--button-background);
-  }
+fa-icon {
+  font-size: inherit;
 }
