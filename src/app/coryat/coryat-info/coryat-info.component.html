@@ -1,1 +1,60 @@
-<p>coryat-info works!</p>
+<section>
+  <h1>What is the Coryat Scoring System?</h1>
+  <p>
+    The Coryat scoring system is a method of tallying a jeopardy score that does
+    not factor in the wagering component of the game. It can be used as a
+    benchmark to measure and compare the strength of Jeopardy competitors and
+    the difficulty of individual games, but is probably most commonly used by
+    people at home to see how they would fare if they were on an episode of the
+    show. You will see it referenced frequently on Jeopardy fan sites and
+    forums. You can find a good description of the method in
+    <a
+      href="https://triviabliss.com/whats-a-coryat-score-in-jeopardy-everything-you-need-to-know/"
+    >
+      this Trivia Bliss article</a
+    >
+    by Megan McLeod. Also, Karl Coryat originally described the scoring system
+    in this blog post:
+    <a href="http://www.pisspoor.com/jep.html"
+      >so you want to be a jeopardy contestant...</a
+    >
+  </p>
+</section>
+
+<section>
+  <h2>What are the Rules?</h2>
+  <p>
+    Your coryat score is represented in dollars, and will be nearly equal to the
+    dollar values of the clues you got right minus the dollar value of the clues
+    you got wrong. Each clue is given on the show you can choose to give a
+    response or not. If you give a response and it's correct, add the dollar
+    value of that clue to your response. If you give a response and it is wrong,
+    subtract that clue's value from your score. If you choose not to respond
+    then your score won't be affected either way.
+    <br />The only exception to this is the daily double clues. According to the
+    coryat method you cannot lose points on daily doubles. If you get the daily
+    double correct then add what the clue would normally be worth (i.e. the
+    value of the clue chosen by the player on the show). If you do get the clue
+    wrong, just pretend you didn't respond, and don't change your score.
+  </p>
+</section>
+<section>
+  <h2>How do I Use the Score Keeper?</h2>
+  <p>
+    Before the clues start, go to the coryat score keeper. If you're watching
+    with anyone else you can go to the setup view and add additional players,
+    and input your names. Then return to the board view. <br />
+    When a player chooses a clue, select that clue's value from the board. Give
+    your response if you know it. Wait to see if it was correct then, select the
+    check for each player that got the clue correct, and the X for everyone that
+    got it wrong. The dot option in the middle means the player chose not to
+    give a response. Select continue. Repeat with the next clue.
+    <app-player-scorer [player]="demoPlayer"></app-player-scorer>
+    <span>How do I Handle Double Jeopardy Clues?</span>
+    When a double jeopardy clue is chosen, follow the same instructions. If any
+    player gives an incorrect response then you can leave the dot option to keep
+    their current score. When single jeopardy ends you can go back to the setup
+    view and select the double jeopardy button. This will double the clue
+    values.
+  </p>
+</section>

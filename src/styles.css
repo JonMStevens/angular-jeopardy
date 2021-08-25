@@ -37,6 +37,14 @@ body {
   overflow: hidden;
 }
 
+h1 {
+  font-size: 5rem;
+  padding-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
 /* partially stolen from https://moderncss.dev/css-button-styling-guide/ */
 button,
 a.button {
