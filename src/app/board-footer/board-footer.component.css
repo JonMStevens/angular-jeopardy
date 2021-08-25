@@ -33,10 +33,6 @@
   flex: 1;
 }
 
-.playerButtons fa-icon {
-  font-size: 1.35rem;
-}
-
 /* players */
 #players {
   flex: 2;
@@ -105,7 +101,7 @@
   background: white;
   width: 500px;
   max-width: 80%;
-  border: 1px solid black;
+  border: var(--standard-border);
 }
 .modal-content * {
   font-family: 'Roboto', sans-serif;
@@ -133,33 +129,4 @@
 }
 .modal-body > button {
   flex: 1;
-}
-
-@supports (--custom: property) {
-  .modal-content {
-    border: var(--standard-border);
-  }
-}
-
-/* vertical styles */
-:host.vertical {
-  grid-template-rows: 1fr 1fr 1fr 6fr;
-  grid-template-columns: 1fr;
-}
-
-:host.vertical .playerButtons {
-  display: flex;
-  gap: 1em;
-}
-
-:host.vertical .playerButtons > button:not(:first-of-type) {
-  margin-top: 0;
-}
-
-:host.vertical .playerButtons > button {
-  max-height: max-content;
-}
-
-:host.vertical > *:not(.modal) {
-  padding: 1em 0 1em 0;
 }
