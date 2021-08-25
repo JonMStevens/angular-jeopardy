@@ -1,13 +1,23 @@
-<div>
-  <h1>Jeopardy</h1>
-  <h2>Jonathan Stevens</h2>
-  <p>
-    A playable Jeopardy game that I wrote to learn the basics of Angular. Clues
-    are selected by retrieving random categories from
-    <a href="https://jservice.io/">jservice.io</a>
-  </p>
-  <a routerLink="/game" class="button" (click)="navToGame()">game</a>
-  <a routerLink="/coryat" class="button" (click)="navToCoryat()"
-    >coryat score counter</a
-  >
+<h1>Jeopardy</h1>
+<h2>Jonathan Stevens</h2>
+<div id="container">
+  <div id="coryat">
+    <p>
+      a coryat score keeper tool that can be used to track your score while
+      playing along with a jeopardy episode
+    </p>
+    <span class="platform">intended for mobile screens</span>
+    <a routerLink="/coryat" class="button" (click)="navToCoryat()"
+      >coryat score counter</a
+    >
+  </div>
+  <div id="game">
+    <p>
+      A playable Jeopardy game that I wrote to learn the basics of Angular.
+      Clues are selected by retrieving random categories from
+      <a href="https://jservice.io/">jservice.io</a>
+    </p>
+    <span class="platform">intended for larger screens</span>
+    <a routerLink="/game" class="button" (click)="navToGame()">game</a>
+  </div>
 </div>
