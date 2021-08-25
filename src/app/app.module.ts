@@ -20,6 +20,7 @@ import { CoryatBoardComponent } from './coryat/coryat-board/coryat-board.compone
 import { BoardFooterComponent } from './board-footer/board-footer.component';
 import { CoryatScorerComponent } from './coryat/coryat-scorer/coryat-scorer.component';
 import { ModalComponent } from './modal/modal.component';
+import { CoryatInfoComponent } from './coryat/coryat-info/coryat-info.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { ModalComponent } from './modal/modal.component';
     CoryatBoardComponent,
     BoardFooterComponent,
     CoryatScorerComponent,
-    ModalComponent
+    ModalComponent,
+    CoryatInfoComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { GameModeGuard } from './guards/game-mode.guard';
 import { CoryatModeGuard } from './guards/coryat-mode.guard';
+import { CoryatInfoComponent } from './coryat/coryat-info/coryat-info.component';
 const routes: Routes = [
   {
     path: 'game',
@@ -21,6 +22,7 @@ const routes: Routes = [
     component: CoryatBoardComponent,
     canActivate: [CoryatModeGuard]
   },
+  { path: 'coryat-info', component: CoryatInfoComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

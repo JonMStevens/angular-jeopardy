@@ -6,11 +6,12 @@
   text-align: center;
   flex-flow: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 h1 {
   font-size: 5rem;
+  padding-bottom: 1rem;
 }
 
 h2 {
@@ -20,7 +21,8 @@ h2 {
 #container {
   display: flex;
   flex-flow: row wrap;
-  margin: 10%;
+  margin-left: 7.5%;
+  margin-right: 7.5%;
   gap: 15%;
 }
 #container > div {
