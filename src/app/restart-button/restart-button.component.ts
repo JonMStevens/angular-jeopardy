@@ -32,4 +32,9 @@ export class RestartButtonComponent implements OnInit {
   hideRestartJeopardyAlert(): void {
     this.showingRestartJeopardyAlert = false;
   }
+  getRestartDescription(): string {
+    return this.gameState.isInCoryatMode()
+      ? 'restart? Clicking yes will erase your scores and begin a new game.'
+      : 'restart? Clicking yes will erase your scores and begin a new game with new questions.';
+  }
 }
