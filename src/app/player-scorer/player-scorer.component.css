@@ -1,5 +1,6 @@
 :host {
   display: inline-block;
+  text-align: center;
 }
 p {
   margin-bottom: 5px;
@@ -12,6 +13,8 @@ input {
   width: 30px;
   line-height: 30px;
   text-align: center;
+
+  outline: none;
 }
 
 input:not(:last-of-type) {
@@ -20,30 +23,48 @@ input:not(:last-of-type) {
 
 input:before {
   transition: 220ms color ease-in-out, 220ms background ease-in-out,
-    220ms border ease-in-out;
+    100ms border ease-in-out;
   border: 2px solid #999;
   font-size: 2rem;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
 
+input:checked:before {
+  border-color: currentColor;
+  border-width: 4px;
+  border-style: solid;
+}
+input:focus {
+  /* replaced below */
+  outline: none;
+}
+input:focus:before,
+input:active:before {
+  /* replace focus style */
+  border-color: currentColor;
+  border-width: 4px;
+  border-style: dashed;
+}
 input:not(:checked):before {
   color: #999;
 }
-
+input:hover::before {
+  border-color: currentColor;
+}
 #rulingCorrect::before {
   content: '\2713';
 }
 
 #rulingCorrect:hover::before {
   color: #0b7c06;
-  border-color: currentColor;
 }
 
 #rulingCorrect:checked::before {
   color: #0b7c06;
-  border-color: currentColor;
   background-color: #0b7c0636;
 }
 
@@ -52,12 +73,10 @@ input:not(:checked):before {
 }
 #rulingNoResponse:hover::before {
   color: #000;
-  border-color: currentColor;
 }
 
 #rulingNoResponse:checked::before {
   color: #000;
-  border-color: currentColor;
   background-color: #ebebeb;
 }
 
@@ -66,11 +85,20 @@ input:not(:checked):before {
 }
 #rulingIncorrect:hover::before {
   color: #7c060b;
-  border-color: currentColor;
 }
 
 #rulingIncorrect:checked::before {
   color: #7c060b;
-  border-color: currentColor;
   background-color: #7c060b36;
+}
+
+:host-context(app-coryat-scorer) p {
+  font-size: 2rem;
+}
+:host-context(app-coryat-scorer) input {
+  height: 4rem;
+  width: 4rem;
+}
+:host-context(app-coryat-scorer) input::before {
+  font-size: 4rem;
 }

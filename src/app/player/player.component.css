@@ -1,15 +1,45 @@
 div {
-  padding: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1rem 1rem 0 1rem;
+  border-radius: 1rem;
+  background-color: var(--player-color);
+  box-shadow: 3px 3px 15px 2px #d3d3d3;
 }
 
-div > *:not(:first-child) {
-  margin-top: 10px;
+label {
+  flex: 1;
+  display: flex;
+  padding: 0 0.25rem 0 0.25rem;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: black;
+  font-size: 1.25rem;
+  border-radius: 0.5rem 0 0 0.5rem;
 }
 
 input {
-  width:100%;
+  flex: 9;
+  min-height: 2.5rem;
+  width: 100%;
+  font-size: 1.25rem;
+  border: none;
   text-align: center;
+  color: #5e5e5e;
+  border-radius: 0 0.5rem 0.5rem 0;
 }
 p {
+  flex: 0 0 100%;
   text-align: center;
+  margin: 0.5rem 0 0.5rem 0;
+  font-size: 1.5rem;
+  color: white;
+}
+:host-context(app-coryat-board) input {
+  font-size: 2rem;
+}
+
+:host-context(app-coryat-board) p {
+  font-size: 3rem;
 }

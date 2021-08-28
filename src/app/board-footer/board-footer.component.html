@@ -1,6 +1,9 @@
-<div class="footer">
+<div id="setupButtons">
   <app-restart-button></app-restart-button>
-  <button *ngIf="showDoubleJeopardyButton()" (click)="startDoubleJeopardy()">
+  <button
+    *ngIf="showDoubleJeopardyButton()"
+    (click)="showDoubleJeopardyAlert()"
+  >
     double jeopardy
   </button>
   <button *ngIf="!showDoubleJeopardyButton()" routerLink="/end-screen">
@@ -22,16 +25,24 @@
       >remove player</label
     >
   </div>
-  <div
-    class="players"
-    [ngClass]="{
-      playersHorizontal: playerService.players.length < 4,
-      playersVertical: playerService.players.length >= 4
-    }"
-  >
-    <app-player
-      *ngFor="let player of playerService.players"
-      [player]="player"
-    ></app-player>
-  </div>
+</div>
+<div
+  id="players"
+  [ngClass]="{
+    playersVertical: arrangePlayersVertically(),
+    playersHorizontal: !arrangePlayersVertically()
+  }"
+>
+  <app-player
+    *ngFor="let player of playerService.players"
+    [player]="player"
+  ></app-player>
+</div>
+<div *ngIf="showingDoubleJeopardyAlert">
+  <app-modal
+    [title]="'double jeopardy?'"
+    [description]="'proceed to the double jeopardy round?'"
+    (noClicked)="hideDoubleJeopardyAlert()"
+    (yesClicked)="startDoubleJeopardy()"
+  ></app-modal>
 </div>

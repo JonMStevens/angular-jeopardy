@@ -11,15 +11,27 @@ import { PlayerService } from '../player.service';
 export class BoardFooterComponent implements OnInit {
   faUserPlus = faUserPlus;
   faUserMinus = faUserMinus;
+  showingDoubleJeopardyAlert = false;
+
   constructor(
     private gameState: GameStateService,
     public playerService: PlayerService
   ) {}
-
   ngOnInit(): void {}
   showDoubleJeopardyButton = (): boolean => this.gameState.round == 1;
   startDoubleJeopardy(): void {
+    this.hideDoubleJeopardyAlert();
     this.gameState.round++;
     this.gameState.roundChange$.next(this.gameState.round);
+  }
+  showDoubleJeopardyAlert(): void {
+    this.showingDoubleJeopardyAlert = true;
+  }
+  hideDoubleJeopardyAlert(): void {
+    this.showingDoubleJeopardyAlert = false;
+  }
+
+  arrangePlayersVertically(): boolean {
+    return this.playerService.players.length >= 4;
   }
 }

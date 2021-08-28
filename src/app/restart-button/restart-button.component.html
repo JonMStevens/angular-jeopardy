@@ -1,3 +1,11 @@
-<button id="btnRestart" routerLink="/game" (click)="restartGame()">
+<button id="btnRestart" (click)="showRestartModal()">
   <fa-icon [icon]="faUndo"></fa-icon>restart
 </button>
+<div *ngIf="showingRestartJeopardyAlert">
+  <app-modal
+    [title]="'restart jeopardy?'"
+    [description]="getRestartDescription()"
+    (noClicked)="hideRestartJeopardyAlert()"
+    (yesClicked)="restartGame()"
+  ></app-modal>
+</div>
