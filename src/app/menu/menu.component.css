@@ -18,7 +18,7 @@
 }
 
 /* new layout for vertical view */
-@media screen and (max-width: calc(519px + 30vw)) {
+@media screen and (max-width: 800px) {
   :host {
     margin-top: 10px;
   }
