@@ -11,19 +11,25 @@ enum Mode {
   providedIn: 'root'
 })
 export class GameStateService {
-  private _inCoryatMode: Mode = 0;
+  private _mode: Mode = 0;
+  public get mode(): Mode {
+    return this._mode;
+  }
+  public set mode(value: Mode) {
+    this._mode = value;
+  }
 
   public isInCoryatMode(): boolean {
-    return this._inCoryatMode === Mode.CORYAT_MODE;
+    return this.mode === Mode.CORYAT_MODE;
   }
   public isInGameMode(): boolean {
-    return this._inCoryatMode === Mode.GAME_MODE;
+    return this.mode === Mode.GAME_MODE;
   }
   setToCoryatMode(): void {
-    this._inCoryatMode = Mode.CORYAT_MODE;
+    this.mode = Mode.CORYAT_MODE;
   }
   setToGameMode(): void {
-    this._inCoryatMode = Mode.GAME_MODE;
+    this.mode = Mode.GAME_MODE;
   }
 
   private _round = 1;

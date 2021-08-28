@@ -9,7 +9,7 @@ import { GameStateService } from './game-state.service';
   providedIn: 'root'
 })
 export class CategoryGetterService {
-  private readonly USE_FAKE_CATEGORY = false;
+  private readonly USE_FAKE_CATEGORY = true;
   private readonly FAKE_CATEGORY_JS =
     '{"id": 55,"title": "sport <i>of</i> kings","clues_count": 25,"clues": [{"id": 303,"answer": "bet on horses","question": "The <i>pari-mutuel</i> system lets you do it legally","value": 100,"airdate": "1984-11-29T12:00:00.000Z","category_id": 55,"game_id": null,"invalid_count": null},{"id": 309,"answer": "a handicap","question": "Race where faster horses carry more weight than slower ones","value": 200,"airdate": "1984-11-29T12:00:00.000Z","category_id": 55,"game_id": null,"invalid_count": null},{"id": 315,"answer": "a mudder","question": "Race horse that runs well on a wet track, or a Bronx mommy","value": 300,"airdate": "1984-11-29T12:00:00.000Z","category_id": 55,"game_id": null,"invalid_count": null},{"id": 327,"answer": "J. Paul Getty","question": "Question was missing!","value": null,"airdate": "1984-11-29T12:00:00.000Z","category_id": 55,"game_id": null,"invalid_count": null},{"id": 321,"answer": "Adam Clayton Powell","question": "Lorem ipsum dolor sit amet consectetur adipiscing elit, luctus quis varius blandit turpis. Interdum vivamus lectus blandit tristique at curabitur diam sagittis volutpat nibh habitasse litora, platea suspendisse tempus augue felis dapibus curae aliquet urna mus feugiat. Etiam eros sed vehicu","value": null,"airdate": "1984-11-29T12:00:00.000Z","category_id": 55,"game_id": null,"invalid_count": 1}]}';
 
