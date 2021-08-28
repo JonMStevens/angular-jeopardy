@@ -1,24 +1,31 @@
 :host {
   display: flex;
-  width: 100vw;
-  height: 100vh;
 
   text-align: center;
   flex-flow: column;
   align-items: center;
   justify-content: space-evenly;
+  margin-top: 5vh;
 }
 
 #container {
   display: flex;
   flex-flow: row;
-  margin-left: 7.5%;
-  margin-right: 7.5%;
-  gap: 15%;
+  margin-top: 5vh;
+  gap: 15vw;
+  margin-left: 7.5vw;
+  margin-right: 7.5vw;
 }
+
+/* new layout for vertical view */
 @media screen and (max-width: 800px) {
+  :host {
+    margin-top: 10px;
+  }
   #container {
     flex-flow: column;
+    gap: 10px;
+    margin: 10px;
   }
 }
 #container > div {
