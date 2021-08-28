@@ -3,7 +3,7 @@ div {
   flex-flow: row wrap;
   padding: 1rem 1rem 0 1rem;
   border-radius: 1rem;
-  background-color: #474dc9;
+  background-color: var(--player-color);
   box-shadow: 3px 3px 15px 2px #d3d3d3;
 }
 
