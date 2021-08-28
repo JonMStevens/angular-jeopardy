@@ -20,13 +20,10 @@ export class GameStateService {
     return this._inCoryatMode === Mode.GAME_MODE;
   }
   setToCoryatMode(): void {
-    this.setMode(Mode.CORYAT_MODE);
+    this._inCoryatMode = Mode.CORYAT_MODE;
   }
   setToGameMode(): void {
-    this.setMode(Mode.GAME_MODE);
-  }
-  private setMode(value: Mode) {
-    this._inCoryatMode = value;
+    this._inCoryatMode = Mode.GAME_MODE;
   }
 
   private _round = 1;
