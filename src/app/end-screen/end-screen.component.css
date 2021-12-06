@@ -37,6 +37,28 @@ p {
   .header > app-restart-button {
     position: static;
   }
+
+  li > p {
+    position: relative !important;
+    margin-left: 2rem !important;
+  }
+
+  li {
+    align-items: flex-start !important;
+    flex-flow: column !important;
+  }
+
+  div {
+    width: 70% !important;
+  }
+
+  .score {
+    right: 0rem !important;
+  }
+
+  .name {
+    left: 0rem !important;
+  }
 }
 
 .header > p {
