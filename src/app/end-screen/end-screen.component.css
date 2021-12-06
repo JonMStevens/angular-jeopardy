@@ -22,20 +22,42 @@ p {
   flex: 1;
   position: relative;
   align-content: center;
-  padding-bottom: 40px;
+  padding-bottom: 0px;
 }
 
 .header > app-restart-button {
-  position: static;
+  position: absolute;
+  left: -162px;
 }
-
-@media screen and (min-width: 700px) {
+@media screen and (max-width: 699px) {
   .header {
-    padding-bottom: 0px;
+    padding-bottom: 40px;
   }
+
   .header > app-restart-button {
-    position: absolute;
-    left: -162px;
+    position: static;
+  }
+
+  li > p {
+    position: relative !important;
+    margin-left: 2rem !important;
+  }
+
+  li {
+    align-items: flex-start !important;
+    flex-flow: column !important;
+  }
+
+  div {
+    width: 70% !important;
+  }
+
+  .score {
+    right: 0rem !important;
+  }
+
+  .name {
+    left: 0rem !important;
   }
 }
 
