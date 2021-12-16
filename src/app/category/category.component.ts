@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Category } from '../category';
 import { CategoryGetterService } from '../category-getter.service';
 import { GameStateService } from '../game-state.service';
@@ -13,22 +13,54 @@ import { GameStateService } from '../game-state.service';
 })
 export class CategoryComponent implements OnInit {
   category: Category | null = null;
+  private sessionStorageKey = '';
+  @Input() categoryNum: number | null = null;
   constructor(
     private categoryGetterService: CategoryGetterService,
     private gameState: GameStateService
   ) {}
 
   ngOnInit(): void {
+    this.sessionStorageKey = `gs_category${this.categoryNum}`;
     this.fillCategory();
     this.gameState.roundChange$.subscribe(() => {
+      sessionStorage.removeItem(this.sessionStorageKey);
       this.fillCategory();
     });
   }
 
   fillCategory(): void {
-    this.categoryGetterService
-      .getCategory$()
-      .subscribe((category) => (this.category = category));
+    if (this.getCategoryFromSession()) return;
+    this.categoryGetterService.getCategory$().subscribe(
+      (category) => (this.category = category),
+      undefined,
+      () => this.saveCategoryToSession()
+    );
+  }
+
+  getCategoryFromSession(): boolean {
+    try {
+      const sessionVar: Category = JSON.parse(
+        String(sessionStorage.getItem(this.sessionStorageKey))
+      );
+      if (!sessionVar) return false;
+      this.category = sessionVar;
+    } catch (error) {
+      this.gameState.reset();
+      return false;
+    }
+    return true;
+  }
+
+  saveCategoryToSession(): void {
+    sessionStorage.setItem(
+      this.sessionStorageKey,
+      JSON.stringify(this.category)
+    );
+  }
+
+  onClueClick(): void {
+    this.saveCategoryToSession();
   }
   isErrorCategory = (): boolean =>
     this.category === this.categoryGetterService.errorCategory;

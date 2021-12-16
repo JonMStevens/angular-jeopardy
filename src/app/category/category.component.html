@@ -4,5 +4,6 @@
     *ngFor="let clue of category.clues"
     [clue]="clue"
     [ngClass]="{ errorClue: isErrorCategory() }"
+    (clueClick)="onClueClick()"
   ></app-clue-square>
 </div>

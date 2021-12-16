@@ -1,11 +1,11 @@
 <div class="boardView" [ngStyle]="{ display: showBoard() ? 'flex' : 'none' }">
   <div class="board">
-    <app-category></app-category>
-    <app-category></app-category>
-    <app-category></app-category>
-    <app-category></app-category>
-    <app-category></app-category>
-    <app-category></app-category>
+    <app-category [categoryNum]="0"></app-category>
+    <app-category [categoryNum]="1"></app-category>
+    <app-category [categoryNum]="2"></app-category>
+    <app-category [categoryNum]="3"></app-category>
+    <app-category [categoryNum]="4"></app-category>
+    <app-category [categoryNum]="5"></app-category>
   </div>
   <app-board-footer></app-board-footer>
 </div>

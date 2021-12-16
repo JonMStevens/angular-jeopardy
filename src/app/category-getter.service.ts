@@ -23,7 +23,8 @@ export class CategoryGetterService {
         question: '',
         question_number: 1,
         airdate: null,
-        game_id: null
+        game_id: null,
+        clicked: false
       },
       {
         id: 0,
@@ -31,7 +32,8 @@ export class CategoryGetterService {
         question: '',
         question_number: 2,
         airdate: null,
-        game_id: null
+        game_id: null,
+        clicked: false
       },
       {
         id: 0,
@@ -39,7 +41,8 @@ export class CategoryGetterService {
         question: '',
         question_number: 3,
         airdate: null,
-        game_id: null
+        game_id: null,
+        clicked: false
       },
       {
         id: 0,
@@ -47,7 +50,8 @@ export class CategoryGetterService {
         question: '',
         question_number: 4,
         airdate: null,
-        game_id: null
+        game_id: null,
+        clicked: false
       },
       {
         id: 0,
@@ -55,7 +59,8 @@ export class CategoryGetterService {
         question: '',
         question_number: 5,
         airdate: null,
-        game_id: null
+        game_id: null,
+        clicked: false
       }
     ],
     clues_count: 5
@@ -67,7 +72,8 @@ export class CategoryGetterService {
     question: 'error',
     question_number: 0,
     airdate: null,
-    game_id: null
+    game_id: null,
+    clicked: false
   };
   public readonly errorCategory: Category = {
     id: 0,
@@ -136,7 +142,8 @@ export class CategoryGetterService {
         question: clue.question.replace('\\', ''),
         question_number: (index % 5) + 1,
         airdate: clue.airdate,
-        game_id: clue.game_id
+        game_id: clue.game_id,
+        clicked: false
       });
     }
     category.clues = fixedClues;

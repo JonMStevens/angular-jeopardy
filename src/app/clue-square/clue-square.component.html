@@ -1,10 +1,10 @@
 <button
   *ngIf="clue"
-  [ngClass]="{ clueComplete: clicked }"
+  [ngClass]="{ clueComplete: clue.clicked }"
   (click)="onClueClick()"
   tabindex="0"
 >
-  <span *ngIf="clicked" class="screen-reader-only"
+  <span *ngIf="clue.clicked" class="screen-reader-only"
     >Clue complete: ${{ gameState.getClueValue(clue) }}</span
   >
   <span>${{ gameState.getClueValue(clue) }}</span>
