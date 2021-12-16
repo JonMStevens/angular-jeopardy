@@ -9,7 +9,6 @@ import { GameStateService } from '../game-state.service';
 export class ClueSquareComponent implements OnInit {
   @Input() public clue: Clue | null = null;
   @Output() public clueClick = new EventEmitter();
-  clicked = false;
 
   constructor(public gameState: GameStateService) {}
 
@@ -18,12 +17,15 @@ export class ClueSquareComponent implements OnInit {
   onClueClick(): void {
     if (this.gameState.isInCoryatMode()) {
       this.gameState.currentClue = this.clue;
+      this.clueClick.emit();
       return;
     }
 
-    if (!this.clicked) {
-      this.clicked = true;
+    if (!this.clue) return;
+    if (!this.clue.clicked) {
+      this.clue.clicked = true;
       this.gameState.currentClue = this.clue;
+      this.clueClick.emit();
       return;
     }
   }

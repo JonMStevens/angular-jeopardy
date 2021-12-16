@@ -49,5 +49,6 @@ export class QuestionScreenComponent implements OnInit {
     );
     this.results = [];
     this.showBoard();
+    this.playerService.savePlayersToSession();
   }
 }

@@ -26,7 +26,5 @@ export class MenuComponent implements OnInit {
     } else {
       this.gameStateService.setToGameMode();
     }
-    this.gameStateService.reset();
-    this.playerService.reset();
   }
 }

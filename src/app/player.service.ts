@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { GameStateService } from './game-state.service';
 import { Player } from './player';
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,7 @@ export class PlayerService {
       name: 'Player ' + (playerNumber + 1).toString(),
       score: 0
     });
+    this.savePlayersToSession();
   }
 
   public removePlayer(): void {
@@ -24,15 +26,35 @@ export class PlayerService {
       return;
     }
     this._players.pop();
+    this.savePlayersToSession();
   }
 
   public reset(): void {
     this._players = [Object.assign({}, this.firstPlayer)];
+    this.savePlayersToSession();
   }
 
   public resetScores(): void {
     this._players.forEach((player) => (player.score = 0));
+    this.savePlayersToSession();
   }
-
-  constructor() {}
+  public savePlayersToSession(): void {
+    sessionStorage.setItem('gs_players', JSON.stringify(this._players));
+  }
+  private getPlayersFromSession(): boolean {
+    const key = 'gs_players';
+    try {
+      const sessionVar: Player[] = JSON.parse(
+        String(sessionStorage.getItem(key))
+      );
+      if (!sessionVar) return false;
+      this._players = sessionVar;
+    } catch (error) {
+      return false;
+    }
+    return true;
+  }
+  constructor(gameStateService: GameStateService) {
+    if (!this.getPlayersFromSession()) gameStateService.reset();
+  }
 }

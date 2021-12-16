@@ -5,6 +5,7 @@
     type="text"
     [(ngModel)]="player.name"
     maxlength="30"
+    (ngModelChange)="onModelChange()"
   />
   <p>{{ player.score | currency: 'USD':'symbol':'1.0-0' }}</p>
 </div>

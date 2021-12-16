@@ -33,5 +33,6 @@ export class CoryatScorerComponent implements OnInit {
     );
     this.results = [];
     this.showBoard();
+    this.playerService.savePlayersToSession();
   }
 }

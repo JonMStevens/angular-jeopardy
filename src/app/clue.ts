@@ -5,4 +5,5 @@ export interface Clue {
   question_number: number;
   airdate: Date | null;
   game_id: number | null;
+  clicked: boolean | null;
 }
