@@ -1,4 +1,11 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnDestroy,
+  OnInit,
+  ViewEncapsulation
+} from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Category } from '../category';
 import { CategoryGetterService } from '../category-getter.service';
 import { GameStateService } from '../game-state.service';
@@ -11,8 +18,9 @@ import { GameStateService } from '../game-state.service';
       with view encapsulation you cannot write rules for those blocks in css */
   encapsulation: ViewEncapsulation.None
 })
-export class CategoryComponent implements OnInit {
-  category: Category | null = null;
+export class CategoryComponent implements OnInit, OnDestroy {
+  public category: Category | undefined;
+  public categorySubscription: Subscription | undefined;
   private sessionStorageKey = '';
   @Input() categoryNum: number | null = null;
   constructor(
@@ -29,13 +37,20 @@ export class CategoryComponent implements OnInit {
     });
   }
 
+  ngOnDestroy(): void {
+    this.gameState.roundChange$.unsubscribe();
+    this.categorySubscription?.unsubscribe();
+  }
+
   fillCategory(): void {
     if (this.getCategoryFromSession()) return;
-    this.categoryGetterService.getCategory$().subscribe(
-      (category) => (this.category = category),
-      undefined,
-      () => this.saveCategoryToSession()
-    );
+
+    this.categorySubscription = this.categoryGetterService
+      .getCategory$()
+      .subscribe((category) => {
+        this.category = category;
+        this.saveCategoryToSession();
+      });
   }
 
   getCategoryFromSession(): boolean {
