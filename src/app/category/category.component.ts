@@ -4,7 +4,8 @@ import {
   OnInit,
   ViewEncapsulation
 } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { Category } from '../category';
 import { CategoryGetterService } from '../category-getter.service';
 import { GameStateService } from '../game-state.service';
@@ -18,6 +19,7 @@ import { GameStateService } from '../game-state.service';
   encapsulation: ViewEncapsulation.None
 })
 export class CategoryComponent implements OnInit {
+  public category$: Observable<Category> | undefined;
   private sessionStorageKey = '';
   @Input() categoryNum: number | null = null;
   constructor(
@@ -34,16 +36,12 @@ export class CategoryComponent implements OnInit {
     });
   }
 
-
   fillCategory(): void {
     if (this.getCategoryFromSession()) return;
 
-    this.categorySubscription = this.categoryGetterService
+    this.category$ = this.categoryGetterService
       .getCategory$()
-      .subscribe((category) => {
-        this.category = category;
-        this.saveCategoryToSession();
-      });
+      .pipe(tap((category) => this.saveCategoryToSession(category)));
   }
 
   getCategoryFromSession(): boolean {
@@ -52,7 +50,7 @@ export class CategoryComponent implements OnInit {
         String(sessionStorage.getItem(this.sessionStorageKey))
       );
       if (!sessionVar) return false;
-      this.category = sessionVar;
+      this.category$ = of(sessionVar);
     } catch (error) {
       this.gameState.reset();
       return false;
@@ -60,16 +58,13 @@ export class CategoryComponent implements OnInit {
     return true;
   }
 
-  saveCategoryToSession(): void {
-    sessionStorage.setItem(
-      this.sessionStorageKey,
-      JSON.stringify(this.category)
-    );
+  saveCategoryToSession(category: Category): void {
+    sessionStorage.setItem(this.sessionStorageKey, JSON.stringify(category));
   }
 
-  onClueClick(): void {
-    this.saveCategoryToSession();
+  onClueClick(category: Category): void {
+    this.saveCategoryToSession(category);
   }
-  isErrorCategory = (): boolean =>
-    this.category === this.categoryGetterService.errorCategory;
+  isErrorCategory = (category: Category): boolean =>
+    category === this.categoryGetterService.errorCategory;
 }

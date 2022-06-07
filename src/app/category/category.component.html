@@ -1,9 +1,9 @@
-<div *ngIf="category" [ngClass]="{ errorCategory: isErrorCategory() }">
+<div *ngIf="category$ | async as category" [ngClass]="{ errorCategory: isErrorCategory(category) }">
   <h2 [innerHTML]="category.title"></h2>
   <app-clue-square
     *ngFor="let clue of category.clues"
     [clue]="clue"
-    [ngClass]="{ errorClue: isErrorCategory() }"
-    (clueClick)="onClueClick()"
+    [ngClass]="{ errorClue: isErrorCategory(category) }"
+    (clueClick)="onClueClick(category)"
   ></app-clue-square>
 </div>
