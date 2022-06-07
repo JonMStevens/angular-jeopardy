@@ -1,7 +1,6 @@
 import {
   Component,
   Input,
-  OnDestroy,
   OnInit,
   ViewEncapsulation
 } from '@angular/core';
@@ -18,9 +17,7 @@ import { GameStateService } from '../game-state.service';
       with view encapsulation you cannot write rules for those blocks in css */
   encapsulation: ViewEncapsulation.None
 })
-export class CategoryComponent implements OnInit, OnDestroy {
-  public category: Category | undefined;
-  public categorySubscription: Subscription | undefined;
+export class CategoryComponent implements OnInit {
   private sessionStorageKey = '';
   @Input() categoryNum: number | null = null;
   constructor(
@@ -37,10 +34,6 @@ export class CategoryComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(): void {
-    this.gameState.roundChange$.unsubscribe();
-    this.categorySubscription?.unsubscribe();
-  }
 
   fillCategory(): void {
     if (this.getCategoryFromSession()) return;
