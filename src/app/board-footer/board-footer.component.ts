@@ -21,8 +21,7 @@ export class BoardFooterComponent implements OnInit {
   showDoubleJeopardyButton = (): boolean => this.gameState.round == 1;
   startDoubleJeopardy(): void {
     this.hideDoubleJeopardyAlert();
-    this.gameState.round++;
-    this.gameState.roundChange$.next(this.gameState.round);
+    this.gameState.advanceRound();
   }
   showDoubleJeopardyAlert(): void {
     this.showingDoubleJeopardyAlert = true;
