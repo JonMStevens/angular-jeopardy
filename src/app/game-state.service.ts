@@ -83,7 +83,7 @@ export class GameStateService {
   /* session restores */
   /**
    *
-   * @returns true if mode was set successfully from sesssion storage
+   * @returns true if mode was set successfully from session storage
    */
   private restoreModeFromSession(): boolean {
     const key = 'gs_mode';
