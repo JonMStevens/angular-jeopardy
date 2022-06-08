@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Clue } from './clue';
 
 enum Mode {
@@ -57,15 +57,20 @@ export class GameStateService {
 
   /* roundChange */
   private _roundChange$ = new Subject<number>();
-  public get roundChange$(): Subject<number> {
-    return this._roundChange$;
+  public get roundChange$(): Observable<number> {
+    return this._roundChange$.asObservable();
   }
 
+  public advanceRound(): void {
+    this.round++;
+    this._roundChange$.next(this.round);
+  }
+  
   public reset(): void {
     sessionStorage.clear();
     this.round = 1;
     this.currentClue = null;
-    this.roundChange$.next(this.round);
+    this._roundChange$.next(this.round);
   }
 
   public getClueValue(clue: Clue | null): number {
