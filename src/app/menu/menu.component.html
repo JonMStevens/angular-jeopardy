@@ -23,6 +23,20 @@
       Clues are selected by retrieving random categories from
       <a href="https://jservice.io/">jservice.io</a>
     </p>
+    <div>
+      <p>If you are hosting this game click the question mark button below:</p>
+      <button class="dot-button info-button" (click)="showPeekModeModal()">
+        ?
+      </button>
+      <div *ngIf="showingPeekModeModal">
+        <app-modal
+          [title]="'Peek Mode'"
+          [description]="getPeekDescription()"
+          (noClicked)="preventPeek()"
+          (yesClicked)="allowPeek()"
+        ></app-modal>
+      </div>
+    </div>
     <span class="platform">intended for larger screens</span>
     <a routerLink="/game" class="button" (click)="navToGame()">game</a>
   </div>

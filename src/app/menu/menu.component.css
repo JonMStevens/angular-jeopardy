@@ -46,3 +46,9 @@ span.platform {
   font-size: 1rem;
   width: 100%;
 }
+
+.info-button {
+  font-size: 2rem;
+  height: 3rem;
+  width: 3rem;
+}

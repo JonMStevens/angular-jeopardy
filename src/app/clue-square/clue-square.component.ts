@@ -25,8 +25,10 @@ export class ClueSquareComponent implements OnInit {
     if (!this.clue.clicked) {
       this.clue.clicked = true;
       this.gameState.currentClue = this.clue;
-      // eslint-disable-next-line no-console
-      console.log(`Answer: ${this.clue?.answer}`);
+      if (this.gameState.allowPeeking) {
+        // eslint-disable-next-line no-console
+        console.log(`Answer: ${this.clue?.answer}`);
+      }
       this.clueClick.emit();
       return;
     }
