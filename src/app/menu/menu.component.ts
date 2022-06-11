@@ -11,6 +11,7 @@ export class MenuComponent implements OnInit {
   constructor(private gameStateService: GameStateService) {}
 
   ngOnInit(): void {
+    // eslint-disable-next-line no-console
     console.log(
       'Please note that if you are playing in game mode, the game includes a peek feature which is on by default. ' +
         'When selecting clues the answers will be logged here for a possible host or presenters benefit. ' +
@@ -37,12 +38,14 @@ export class MenuComponent implements OnInit {
   public preventPeek(): void {
     this.gameStateService.allowPeeking = false;
     this.hidePeekModeModal();
+    // eslint-disable-next-line no-console
     console.log('Peek messages prevented.');
   }
 
   public allowPeek(): void {
     this.gameStateService.allowPeeking = true;
     this.hidePeekModeModal();
+    // eslint-disable-next-line no-console
     console.log('Peek messages allowed.');
   }
 
