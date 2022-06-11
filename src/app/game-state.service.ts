@@ -13,6 +13,16 @@ enum Mode {
 export class GameStateService {
   /* mode */
   private _mode: Mode = 0;
+  private _allowPeeking = true;
+
+  public set allowPeeking(value: boolean) {
+    this._allowPeeking = value;
+  }
+
+  public get allowPeeking(): boolean {
+    return this._allowPeeking;
+  }
+
   public get mode(): Mode {
     return this._mode;
   }
@@ -65,7 +75,7 @@ export class GameStateService {
     this.round++;
     this._roundChange$.next(this.round);
   }
-  
+
   public reset(): void {
     sessionStorage.clear();
     this.round = 1;
@@ -146,7 +156,5 @@ export class GameStateService {
 
   constructor() {
     this.restoreSessionValues();
-    console.dir(sessionStorage);
-    console.dir(this);
   }
 }
