@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameStateService } from '../game-state.service';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,7 +9,12 @@ import { GameStateService } from '../game-state.service';
 })
 export class MenuComponent implements OnInit {
   public showingPeekModeModal = false;
-  constructor(private gameStateService: GameStateService) {}
+  constructor(
+    // services initialled immediately in here for now 
+    // in order to check for values stored in session in both services before values are needed
+    private gameStateService: GameStateService,
+    private playerService: PlayerService
+  ) {}
 
   ngOnInit(): void {
     // eslint-disable-next-line no-console

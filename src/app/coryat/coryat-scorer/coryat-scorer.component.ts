@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { GameStateService } from 'src/app/game-state.service';
 import { Player } from 'src/app/player';
 import { PlayerService } from 'src/app/player.service';
@@ -8,7 +8,7 @@ import { PlayerService } from 'src/app/player.service';
   templateUrl: './coryat-scorer.component.html',
   styleUrls: ['./coryat-scorer.component.css']
 })
-export class CoryatScorerComponent implements OnInit {
+export class CoryatScorerComponent {
   results: number[] = [];
 
   constructor(
@@ -16,9 +16,8 @@ export class CoryatScorerComponent implements OnInit {
     public playerService: PlayerService
   ) {}
 
-  ngOnInit(): void {}
   showBoard(): void {
-    this.gameState.currentClue = null;
+    this.gameState.setCurrentClue(null);
   }
 
   onRulingChange(result: number, player: Player): void {
@@ -26,10 +25,13 @@ export class CoryatScorerComponent implements OnInit {
   }
 
   awardPoints(): void {
+    let clueValue = 0;
+    const sub = this.gameState.currentClue$.subscribe(
+      (clue) => (clueValue = this.gameState.getClueValue(clue))
+    );
+    sub.unsubscribe();
     this.results.forEach(
-      (result, i) =>
-        (this.playerService.players[i].score +=
-          result * this.gameState.getClueValue(this.gameState.currentClue))
+      (result, i) => (this.playerService.players[i].score += result * clueValue)
     );
     this.results = [];
     this.showBoard();

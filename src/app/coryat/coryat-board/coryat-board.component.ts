@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { faBorderAll, faUsersCog } from '@fortawesome/free-solid-svg-icons';
 import { GameStateService } from 'src/app/game-state.service';
 
@@ -13,15 +12,12 @@ export class CoryatBoardComponent implements OnInit {
   faBorderAll = faBorderAll;
   faUsersCog = faUsersCog;
   private sessionStorageKey = 'coryat_showingBoard';
-  constructor(private gameState: GameStateService, private router: Router) {}
+  constructor(public gameState: GameStateService) {}
 
   ngOnInit(): void {
     this.getShowingBoardFromStorage();
   }
 
-  showQuestionScreen = (): boolean => this.gameState.currentClue != null;
-  showBoard = (): boolean => !this.showQuestionScreen() && this.showingBoard;
-  showSetup = (): boolean => !this.showQuestionScreen() && !this.showingBoard;
   goToSetup(): void {
     this.showingBoard = false;
     sessionStorage.setItem(this.sessionStorageKey, 'false');

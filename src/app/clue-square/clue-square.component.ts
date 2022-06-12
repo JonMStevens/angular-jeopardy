@@ -16,7 +16,7 @@ export class ClueSquareComponent implements OnInit {
 
   onClueClick(): void {
     if (this.gameState.isInCoryatMode()) {
-      this.gameState.currentClue = this.clue;
+      this.gameState.setCurrentClue(this.clue);
       this.clueClick.emit();
       return;
     }
@@ -24,7 +24,7 @@ export class ClueSquareComponent implements OnInit {
     if (!this.clue) return;
     if (!this.clue.clicked) {
       this.clue.clicked = true;
-      this.gameState.currentClue = this.clue;
+      this.gameState.setCurrentClue(this.clue);
       if (this.gameState.allowPeeking) {
         // eslint-disable-next-line no-console
         console.log(`Answer: ${this.clue?.answer}`);
