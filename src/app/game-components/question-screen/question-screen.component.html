@@ -1,17 +1,19 @@
-<div id="questionDiv" *ngIf="gameState.currentClue && !answerSeen">
-  <p [innerHTML]="gameState.currentClue.question"></p>
-</div>
-<div id="answerDiv" *ngIf="gameState.currentClue && answerSeen">
-  <p [innerHTML]="gameState.currentClue.answer"></p>
-</div>
-<div *ngIf="!answerSeen" class="buttonDiv">
-  <button (click)="showAnswer()" tabindex="0">show answer</button>
-</div>
-<div *ngIf="answerSeen" class="buttonDiv">
-  <app-player-scorer
-    *ngFor="let player of playerService.players"
-    [player]="player"
-    (rulingChange)="onRulingChange($event, player)"
-  ></app-player-scorer>
-  <button (click)="awardPoints()" tabindex="0">continue</button>
-</div>
+<ng-container *ngIf="gameState.currentClue$ | async as currentClue">
+  <div id="questionDiv" *ngIf="currentClue && !answerSeen">
+    <p [innerHTML]="currentClue.question"></p>
+  </div>
+  <div id="answerDiv" *ngIf="currentClue && answerSeen">
+    <p [innerHTML]="currentClue.answer"></p>
+  </div>
+  <div *ngIf="!answerSeen" class="buttonDiv">
+    <button (click)="showAnswer()" tabindex="0">show answer</button>
+  </div>
+  <div *ngIf="answerSeen" class="buttonDiv">
+    <app-player-scorer
+      *ngFor="let player of playerService.players"
+      [player]="player"
+      (rulingChange)="onRulingChange($event, player)"
+    ></app-player-scorer>
+    <button (click)="awardPoints()" tabindex="0">continue</button>
+  </div>
+</ng-container>

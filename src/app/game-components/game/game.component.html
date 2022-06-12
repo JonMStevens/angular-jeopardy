@@ -1,14 +1,21 @@
-<div class="boardView" [ngStyle]="{ display: showBoard() ? 'flex' : 'none' }">
-  <div class="board">
-    <app-category [categoryNum]="0"></app-category>
-    <app-category [categoryNum]="1"></app-category>
-    <app-category [categoryNum]="2"></app-category>
-    <app-category [categoryNum]="3"></app-category>
-    <app-category [categoryNum]="4"></app-category>
-    <app-category [categoryNum]="5"></app-category>
+<ng-container
+  *ngIf="{ currentClue: this.gameState.currentClue$ | async } as clueObj"
+>
+  <div
+    class="boardView"
+    [ngStyle]="{ display: !clueObj.currentClue ? 'flex' : 'none' }"
+  >
+    <div class="board">
+      <app-category [categoryNum]="0"></app-category>
+      <app-category [categoryNum]="1"></app-category>
+      <app-category [categoryNum]="2"></app-category>
+      <app-category [categoryNum]="3"></app-category>
+      <app-category [categoryNum]="4"></app-category>
+      <app-category [categoryNum]="5"></app-category>
+    </div>
+    <app-board-footer></app-board-footer>
   </div>
-  <app-board-footer></app-board-footer>
-</div>
-<div [ngStyle]="{ display: !showBoard() ? 'inline-block' : 'none' }">
-  <app-question-screen></app-question-screen>
-</div>
+  <div [ngStyle]="{ display: clueObj.currentClue ? 'inline-block' : 'none' }">
+    <app-question-screen></app-question-screen>
+  </div>
+</ng-container>

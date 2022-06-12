@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Clue } from './clue';
 
 enum Mode {
@@ -28,9 +28,12 @@ export class GameStateService {
   }
   public set mode(value: Mode) {
     this._mode = value;
-    sessionStorage.setItem('gs_mode', this.mode.toString());
+    this.saveModeToStorage();
   }
 
+  private saveModeToStorage(): void {
+    sessionStorage.setItem('gs_mode', this.mode.toString());
+  }
   public isInCoryatMode(): boolean {
     return this.mode === Mode.CORYAT_MODE;
   }
@@ -55,13 +58,14 @@ export class GameStateService {
   }
 
   /* currentClue */
-  private _currentClue: Clue | null = null;
+  private _currentClue$ = new BehaviorSubject<Clue | null>(null);
 
-  public get currentClue(): Clue | null {
-    return this._currentClue;
+  public get currentClue$(): Observable<Clue | null> {
+    return this._currentClue$.asObservable();
   }
-  public set currentClue(value: Clue | null) {
-    this._currentClue = value;
+
+  public setCurrentClue(value: Clue | null): void {
+    this._currentClue$.next(value);
     sessionStorage.setItem('gs_currentClue', JSON.stringify(value));
   }
 
@@ -78,8 +82,9 @@ export class GameStateService {
 
   public reset(): void {
     sessionStorage.clear();
+    this.saveModeToStorage();
     this.round = 1;
-    this.currentClue = null;
+    this.setCurrentClue(null);
     this._roundChange$.next(this.round);
   }
 
@@ -137,7 +142,8 @@ export class GameStateService {
   private restoreCurrentClueFromSession(): boolean {
     const key = 'gs_currentClue';
     try {
-      this.currentClue = JSON.parse(String(sessionStorage.getItem(key)));
+      const sessionVar = JSON.parse(String(sessionStorage.getItem(key)));
+      this.setCurrentClue(sessionVar);
     } catch (error) {
       return false;
     }

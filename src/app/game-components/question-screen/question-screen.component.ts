@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { GameStateService } from '../../game-state.service';
 import { Player } from '../../player';
 import { PlayerService } from '../../player.service';
@@ -11,7 +11,7 @@ import { PlayerService } from '../../player.service';
       with view encapsulation you cannot write rules for those blocks in css */
   encapsulation: ViewEncapsulation.None
 })
-export class QuestionScreenComponent implements OnInit {
+export class QuestionScreenComponent {
   answerSeen = false;
   results: number[] = [];
   constructor(
@@ -19,22 +19,13 @@ export class QuestionScreenComponent implements OnInit {
     public playerService: PlayerService
   ) {}
 
-  ngOnInit(): void {
-    if (!this.gameState.currentClue) {
-      // error, should never show this without a clue
-      // todo throw error
-      this.showBoard();
-      return;
-    }
-  }
-
   showAnswer(): void {
     this.answerSeen = true;
   }
 
   showBoard(): void {
     this.answerSeen = false;
-    this.gameState.currentClue = null;
+    this.gameState.setCurrentClue(null);
   }
 
   onRulingChange(result: number, player: Player): void {
@@ -42,10 +33,13 @@ export class QuestionScreenComponent implements OnInit {
   }
 
   awardPoints(): void {
+    let clueValue = 0;
+    const sub = this.gameState.currentClue$.subscribe(
+      (clue) => (clueValue = this.gameState.getClueValue(clue))
+    );
+    sub.unsubscribe();
     this.results.forEach(
-      (result, i) =>
-        (this.playerService.players[i].score +=
-          result * this.gameState.getClueValue(this.gameState.currentClue))
+      (result, i) => (this.playerService.players[i].score += result * clueValue)
     );
     this.results = [];
     this.showBoard();

@@ -1,17 +1,29 @@
-<div *ngIf="showSetup()" id="setup" class="div-main-screen">
-  <button class="dot-button" id="btnToBoard" (click)="goToBoard()">
-    <fa-icon [icon]="faBorderAll"></fa-icon>
-  </button>
-  <label for="btnToBoard" class="screen-reader-only">Go to board view</label>
-  <app-board-footer></app-board-footer>
-</div>
-<div *ngIf="showBoard()" id="board" class="div-main-screen">
-  <app-category></app-category>
-  <button class="dot-button" id="btnToSetup" (click)="goToSetup()">
-    <fa-icon [icon]="faUsersCog"></fa-icon>
-  </button>
-  <label for="btnToSetup" class="screen-reader-only">Go to setup view</label>
-</div>
-<div *ngIf="showQuestionScreen()" id="scorer">
-  <app-coryat-scorer></app-coryat-scorer>
-</div>
+<ng-container
+  *ngIf="{ currentClue: this.gameState.currentClue$ | async } as clueObj"
+>
+  <div
+    *ngIf="clueObj.currentClue == null && !this.showingBoard"
+    id="setup"
+    class="div-main-screen"
+  >
+    <button class="dot-button" id="btnToBoard" (click)="goToBoard()">
+      <fa-icon [icon]="faBorderAll"></fa-icon>
+    </button>
+    <label for="btnToBoard" class="screen-reader-only">Go to board view</label>
+    <app-board-footer></app-board-footer>
+  </div>
+  <div
+    *ngIf="clueObj.currentClue == null && this.showingBoard"
+    id="board"
+    class="div-main-screen"
+  >
+    <app-category></app-category>
+    <button class="dot-button" id="btnToSetup" (click)="goToSetup()">
+      <fa-icon [icon]="faUsersCog"></fa-icon>
+    </button>
+    <label for="btnToSetup" class="screen-reader-only">Go to setup view</label>
+  </div>
+  <div *ngIf="clueObj.currentClue != null" id="scorer">
+    <app-coryat-scorer></app-coryat-scorer>
+  </div>
+</ng-container>
