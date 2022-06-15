@@ -10,7 +10,7 @@ import { PlayerService } from '../player.service';
 export class MenuComponent implements OnInit {
   public showingPeekModeModal = false;
   constructor(
-    // services initialled immediately in here for now 
+    // services initialled immediately in here for now
     // in order to check for values stored in session in both services before values are needed
     private gameStateService: GameStateService,
     private playerService: PlayerService
@@ -34,6 +34,11 @@ export class MenuComponent implements OnInit {
     this.changeMode(true);
   }
   changeMode(inCoryatMode: boolean): void {
+    if (inCoryatMode !== this.gameStateService.isInCoryatMode()) {
+      this.gameStateService.reset();
+      this.playerService.reset();
+    }
+
     if (inCoryatMode) {
       this.gameStateService.setToCoryatMode();
     } else {
