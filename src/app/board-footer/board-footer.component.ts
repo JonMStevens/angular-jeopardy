@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { faUserPlus, faUserMinus } from '@fortawesome/free-solid-svg-icons';
 import { GameStateService } from '../game-state.service';
 import { PlayerService } from '../player.service';
@@ -8,7 +8,7 @@ import { PlayerService } from '../player.service';
   templateUrl: './board-footer.component.html',
   styleUrls: ['./board-footer.component.css']
 })
-export class BoardFooterComponent implements OnInit {
+export class BoardFooterComponent {
   faUserPlus = faUserPlus;
   faUserMinus = faUserMinus;
   showingDoubleJeopardyAlert = false;
@@ -17,15 +17,17 @@ export class BoardFooterComponent implements OnInit {
     private gameState: GameStateService,
     public playerService: PlayerService
   ) {}
-  ngOnInit(): void {}
   showDoubleJeopardyButton = (): boolean => this.gameState.round == 1;
+
   startDoubleJeopardy(): void {
     this.hideDoubleJeopardyAlert();
     this.gameState.advanceRound();
   }
+
   showDoubleJeopardyAlert(): void {
     this.showingDoubleJeopardyAlert = true;
   }
+
   hideDoubleJeopardyAlert(): void {
     this.showingDoubleJeopardyAlert = false;
   }
