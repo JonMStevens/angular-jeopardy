@@ -1,9 +1,4 @@
-import {
-  Component,
-  Input,
-  OnInit,
-  ViewEncapsulation
-} from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Category } from '../category';
@@ -21,13 +16,13 @@ import { GameStateService } from '../game-state.service';
 export class CategoryComponent implements OnInit {
   public category$: Observable<Category> | undefined;
   private sessionStorageKey = '';
-  @Input() categoryNum: number | null = null;
+  @Input() public categoryNum: number | null = null;
   constructor(
     private categoryGetterService: CategoryGetterService,
     private gameState: GameStateService
   ) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.sessionStorageKey = `gs_category${this.categoryNum}`;
     this.fillCategory();
     this.gameState.roundChange$.subscribe(() => {
@@ -36,7 +31,7 @@ export class CategoryComponent implements OnInit {
     });
   }
 
-  fillCategory(): void {
+  private fillCategory(): void {
     if (this.getCategoryFromSession()) return;
 
     this.category$ = this.categoryGetterService
@@ -44,7 +39,7 @@ export class CategoryComponent implements OnInit {
       .pipe(tap((category) => this.saveCategoryToSession(category)));
   }
 
-  getCategoryFromSession(): boolean {
+  private getCategoryFromSession(): boolean {
     try {
       const sessionVar: Category = JSON.parse(
         String(sessionStorage.getItem(this.sessionStorageKey))
@@ -58,13 +53,14 @@ export class CategoryComponent implements OnInit {
     return true;
   }
 
-  saveCategoryToSession(category: Category): void {
+  private saveCategoryToSession(category: Category): void {
     sessionStorage.setItem(this.sessionStorageKey, JSON.stringify(category));
   }
 
-  onClueClick(category: Category): void {
+  public onClueClick(category: Category): void {
     this.saveCategoryToSession(category);
   }
-  isErrorCategory = (category: Category): boolean =>
+
+  public isErrorCategory = (category: Category): boolean =>
     category === this.categoryGetterService.errorCategory;
 }

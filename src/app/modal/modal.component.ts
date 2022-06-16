@@ -1,23 +1,21 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css']
 })
-export class ModalComponent implements OnInit {
-  @Output() noClicked = new EventEmitter();
-  @Output() yesClicked = new EventEmitter();
-  @Input() title = '';
-  @Input() description = '';
+export class ModalComponent {
+  @Output() private noClicked = new EventEmitter();
+  @Output() private yesClicked = new EventEmitter();
+  @Input() public title = '';
+  @Input() public description = '';
   constructor() {}
 
-  ngOnInit(): void {}
-
-  noClick(): void {
+  public noClick(): void {
     this.noClicked.emit();
   }
-  yesClick(): void {
+  public yesClick(): void {
     this.yesClicked.emit();
   }
 }

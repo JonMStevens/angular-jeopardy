@@ -8,8 +8,8 @@ import { Player } from '../player';
   styleUrls: ['./player-scorer.component.css']
 })
 export class PlayerScorerComponent implements OnInit {
-  @Input() player: Player | null = null;
-  @Output() rulingChange = new EventEmitter<number>();
+  @Input() public player: Player | null = null;
+  @Output() private rulingChange = new EventEmitter<number>();
   constructor() {}
 
   ngOnInit(): void {}

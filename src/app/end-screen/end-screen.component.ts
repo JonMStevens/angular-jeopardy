@@ -11,7 +11,7 @@ export class EndScreenComponent implements OnInit {
   public players: Player[] = [];
   constructor(private playerService: PlayerService) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     /* create copy and sort copy
     retain the entered order of players */
     Object.assign(this.players, this.playerService.players);

@@ -8,26 +8,26 @@ import { GameStateService } from 'src/app/game-state.service';
   styleUrls: ['./coryat-board.component.css']
 })
 export class CoryatBoardComponent implements OnInit {
-  showingBoard = true;
-  faBorderAll = faBorderAll;
-  faUsersCog = faUsersCog;
+  public showingBoard = true;
+  public faBorderAll = faBorderAll;
+  public faUsersCog = faUsersCog;
   private sessionStorageKey = 'coryat_showingBoard';
   constructor(public gameState: GameStateService) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.getShowingBoardFromStorage();
   }
 
-  goToSetup(): void {
+  public goToSetup(): void {
     this.showingBoard = false;
     sessionStorage.setItem(this.sessionStorageKey, 'false');
   }
-  goToBoard(): void {
+  public goToBoard(): void {
     this.showingBoard = true;
     sessionStorage.setItem(this.sessionStorageKey, 'true');
   }
 
-  getShowingBoardFromStorage(): boolean {
+  private getShowingBoardFromStorage(): boolean {
     try {
       const sessionVar: boolean = JSON.parse(
         String(sessionStorage.getItem(this.sessionStorageKey)).toString()

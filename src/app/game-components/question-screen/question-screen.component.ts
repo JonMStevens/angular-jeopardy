@@ -12,27 +12,27 @@ import { PlayerService } from '../../player.service';
   encapsulation: ViewEncapsulation.None
 })
 export class QuestionScreenComponent {
-  answerSeen = false;
-  results: number[] = [];
+  public answerSeen = false;
+  private results: number[] = [];
   constructor(
     public gameState: GameStateService,
     public playerService: PlayerService
   ) {}
 
-  showAnswer(): void {
+  public showAnswer(): void {
     this.answerSeen = true;
   }
 
-  showBoard(): void {
+  private showBoard(): void {
     this.answerSeen = false;
     this.gameState.setCurrentClue(null);
   }
 
-  onRulingChange(result: number, player: Player): void {
+  public onRulingChange(result: number, player: Player): void {
     this.results[player.number] = result;
   }
 
-  awardPoints(): void {
+  public awardPoints(): void {
     let clueValue = 0;
     const sub = this.gameState.currentClue$.subscribe(
       (clue) => (clueValue = this.gameState.getClueValue(clue))
