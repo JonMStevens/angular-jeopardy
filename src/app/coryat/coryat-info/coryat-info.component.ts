@@ -6,6 +6,6 @@ import { Player } from 'src/app/player';
   styleUrls: ['./coryat-info.component.css']
 })
 export class CoryatInfoComponent {
-  demoPlayer: Player = { number: 0, name: 'Player 1', score: 0 };
+  public demoPlayer: Player = { number: 0, name: 'Player 1', score: 0 };
   constructor() {}
 }

@@ -16,7 +16,7 @@ import { GameStateService } from '../game-state.service';
 export class CategoryComponent implements OnInit {
   public category$: Observable<Category> | undefined;
   private sessionStorageKey = '';
-  @Input() categoryNum: number | null = null;
+  @Input() public categoryNum: number | null = null;
   constructor(
     private categoryGetterService: CategoryGetterService,
     private gameState: GameStateService

@@ -8,9 +8,9 @@ import { GameStateService } from 'src/app/game-state.service';
   styleUrls: ['./coryat-board.component.css']
 })
 export class CoryatBoardComponent implements OnInit {
-  showingBoard = true;
-  faBorderAll = faBorderAll;
-  faUsersCog = faUsersCog;
+  public showingBoard = true;
+  public faBorderAll = faBorderAll;
+  public faUsersCog = faUsersCog;
   private sessionStorageKey = 'coryat_showingBoard';
   constructor(public gameState: GameStateService) {}
 

@@ -9,7 +9,7 @@ import { PlayerService } from 'src/app/player.service';
   styleUrls: ['./coryat-scorer.component.css']
 })
 export class CoryatScorerComponent {
-  results: number[] = [];
+  private results: number[] = [];
 
   constructor(
     private gameState: GameStateService,

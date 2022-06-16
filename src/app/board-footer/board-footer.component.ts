@@ -9,9 +9,9 @@ import { PlayerService } from '../player.service';
   styleUrls: ['./board-footer.component.css']
 })
 export class BoardFooterComponent {
-  faUserPlus = faUserPlus;
-  faUserMinus = faUserMinus;
-  showingDoubleJeopardyAlert = false;
+  public faUserPlus = faUserPlus;
+  public faUserMinus = faUserMinus;
+  public showingDoubleJeopardyAlert = false;
 
   constructor(
     private gameState: GameStateService,
@@ -28,7 +28,7 @@ export class BoardFooterComponent {
     this.showingDoubleJeopardyAlert = true;
   }
 
-  hideDoubleJeopardyAlert(): void {
+  public hideDoubleJeopardyAlert(): void {
     this.showingDoubleJeopardyAlert = false;
   }
 
