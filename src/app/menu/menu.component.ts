@@ -16,7 +16,7 @@ export class MenuComponent implements OnInit {
     private playerService: PlayerService
   ) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     // eslint-disable-next-line no-console
     console.log(
       'Please note that if you are playing in game mode, the game includes a peek feature which is on by default. ' +
@@ -27,13 +27,16 @@ export class MenuComponent implements OnInit {
         'You can choose to prevent or allow these messages by clicking on the question mark button on the main menu.'
     );
   }
-  navToGame(): void {
+
+  public navToGame(): void {
     this.changeMode(false);
   }
-  navToCoryat(): void {
+
+  public navToCoryat(): void {
     this.changeMode(true);
   }
-  changeMode(inCoryatMode: boolean): void {
+
+  private changeMode(inCoryatMode: boolean): void {
     if (inCoryatMode !== this.gameStateService.isInCoryatMode()) {
       this.gameStateService.reset();
       this.playerService.reset();

@@ -12,7 +12,7 @@ export class ClueSquareComponent {
 
   constructor(public gameState: GameStateService) {}
 
-  onClueClick(): void {
+  public onClueClick(): void {
     if (this.gameState.isInCoryatMode()) {
       this.gameState.setCurrentClue(this.clue);
       this.clueClick.emit();

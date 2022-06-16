@@ -26,6 +26,7 @@ export class GameStateService {
   public get mode(): Mode {
     return this._mode;
   }
+
   public set mode(value: Mode) {
     this._mode = value;
     this.saveModeToStorage();
@@ -34,16 +35,20 @@ export class GameStateService {
   private saveModeToStorage(): void {
     sessionStorage.setItem('gs_mode', this.mode.toString());
   }
+
   public isInCoryatMode(): boolean {
     return this.mode === Mode.CORYAT_MODE;
   }
+
   public isInGameMode(): boolean {
     return this.mode === Mode.GAME_MODE;
   }
-  setToCoryatMode(): void {
+
+  public setToCoryatMode(): void {
     this.mode = Mode.CORYAT_MODE;
   }
-  setToGameMode(): void {
+
+  public setToGameMode(): void {
     this.mode = Mode.GAME_MODE;
   }
 
@@ -52,6 +57,7 @@ export class GameStateService {
   public get round(): number {
     return this._round;
   }
+
   public set round(value: number) {
     this._round = value;
     sessionStorage.setItem('gs_round', value.toString());
@@ -150,7 +156,7 @@ export class GameStateService {
     return true;
   }
 
-  private restoreSessionValues() {
+  private restoreSessionValues(): void {
     /* either set all to session var or set all to default */
     let success = this.restoreModeFromSession();
     if (success) success = this.restoreRoundFromSession();

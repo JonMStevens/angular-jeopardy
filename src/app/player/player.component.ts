@@ -8,9 +8,9 @@ import { PlayerService } from '../player.service';
   styleUrls: ['./player.component.css']
 })
 export class PlayerComponent {
-  @Input() player: Player | null = null;
+  @Input() public player: Player | null = null;
   constructor(private playerService: PlayerService) {}
-  onModelChange(): void {
+  public onModelChange(): void {
     this.playerService.savePlayersToSession();
   }
 }

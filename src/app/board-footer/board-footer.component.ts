@@ -17,14 +17,14 @@ export class BoardFooterComponent {
     private gameState: GameStateService,
     public playerService: PlayerService
   ) {}
-  showDoubleJeopardyButton = (): boolean => this.gameState.round == 1;
+  public showDoubleJeopardyButton = (): boolean => this.gameState.round == 1;
 
-  startDoubleJeopardy(): void {
+  public startDoubleJeopardy(): void {
     this.hideDoubleJeopardyAlert();
     this.gameState.advanceRound();
   }
 
-  showDoubleJeopardyAlert(): void {
+  public showDoubleJeopardyAlert(): void {
     this.showingDoubleJeopardyAlert = true;
   }
 
@@ -32,7 +32,7 @@ export class BoardFooterComponent {
     this.showingDoubleJeopardyAlert = false;
   }
 
-  arrangePlayersVertically(): boolean {
+  public arrangePlayersVertically(): boolean {
     return this.playerService.players.length >= 4;
   }
 }

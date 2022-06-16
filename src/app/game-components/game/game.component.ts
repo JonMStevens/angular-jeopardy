@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { GameStateService } from '../../game-state.service';
 
 @Component({
@@ -8,5 +7,5 @@ import { GameStateService } from '../../game-state.service';
   styleUrls: ['./game.component.css']
 })
 export class GameComponent {
-  constructor(public gameState: GameStateService, private router: Router) {}
+  constructor(public gameState: GameStateService) {}
 }

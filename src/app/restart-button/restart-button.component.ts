@@ -10,28 +10,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./restart-button.component.css']
 })
 export class RestartButtonComponent {
-  faUndo = faUndo;
-  showingRestartJeopardyAlert = false;
+  public faUndo = faUndo;
+  public showingRestartJeopardyAlert = false;
   constructor(
     private router: Router,
     private gameState: GameStateService,
     private playerService: PlayerService
   ) {}
 
-  restartGame(): void {
+  public restartGame(): void {
     this.gameState.reset();
     this.playerService.resetScores();
     this.hideRestartJeopardyAlert();
     const route = this.gameState.isInCoryatMode() ? '/coryat' : '/game';
     this.router.navigate([route]);
   }
-  showRestartModal(): void {
+  public showRestartModal(): void {
     this.showingRestartJeopardyAlert = true;
   }
-  hideRestartJeopardyAlert(): void {
+  public hideRestartJeopardyAlert(): void {
     this.showingRestartJeopardyAlert = false;
   }
-  getRestartDescription(): string {
+  public getRestartDescription(): string {
     return this.gameState.isInCoryatMode()
       ? 'restart? Clicking yes will erase your scores and begin a new game.'
       : 'restart? Clicking yes will erase your scores and begin a new game with new questions.';

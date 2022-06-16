@@ -16,15 +16,7 @@ export class CoryatScorerComponent {
     public playerService: PlayerService
   ) {}
 
-  showBoard(): void {
-    this.gameState.setCurrentClue(null);
-  }
-
-  onRulingChange(result: number, player: Player): void {
-    this.results[player.number] = result;
-  }
-
-  awardPoints(): void {
+  public awardPoints(): void {
     let clueValue = 0;
     const sub = this.gameState.currentClue$.subscribe(
       (clue) => (clueValue = this.gameState.getClueValue(clue))
@@ -36,5 +28,13 @@ export class CoryatScorerComponent {
     this.results = [];
     this.showBoard();
     this.playerService.savePlayersToSession();
+  }
+
+  private showBoard(): void {
+    this.gameState.setCurrentClue(null);
+  }
+
+  public onRulingChange(result: number, player: Player): void {
+    this.results[player.number] = result;
   }
 }

@@ -9,7 +9,7 @@ import { GameStateService } from '../game-state.service';
 export class CoryatModeGuard implements CanActivate {
   constructor(private gameState: GameStateService, private router: Router) {}
 
-  canActivate():
+  public canActivate():
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree>
     | boolean
